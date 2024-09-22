@@ -1,9 +1,9 @@
-<script lang="ts">
+<script>
 	import { page, navigating } from '$app/stores';
 
-	export let href: string;
+	export let href;
 
-	let isActive: boolean;
+	let isActive;
 	$: if ($navigating) isActive = $page.route.id?.includes(href) || false;
 </script>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-	export let as: 'span' | 'button' | 'a' = 'button';
-	export let href: string | undefined = undefined;
-	export let type: 'primary' | 'secondary' = 'primary';
+	export let as = 'button';
+	export let href = undefined;
+	export let type = 'primary';
 
 	const sharedProps = {
 		class: `button button--${type}`
