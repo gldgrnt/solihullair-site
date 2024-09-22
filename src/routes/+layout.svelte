@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Layout from '$lib/components/Layout.svelte';
 </script>
 
@@ -6,6 +6,6 @@
 	<slot />
 </Layout>
 
-<style>
+<style lang="css" global>
 	@import '$lib/styles/index.css';
 </style>

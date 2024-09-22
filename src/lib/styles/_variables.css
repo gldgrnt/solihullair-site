@@ -1,21 +1,21 @@
 :root {
-    /* Colours */
-    --sa-colour-ember: #CF4517;
-    --sa-colour-cobalt: #1D376F;
-    --sa-colour-carbon: #1A1A1A;
-    --sa-colour-platinum: #E6E6E6;
-    --sa-colour-snow: #FFFFFF;
-    --sa-colour-sulpher: #FFBF00;
-    --sa-colour-aquamarine: #9AC4F8;
-    /* Spacing */
-    --sa-spacing-base: 16px;
-    --sa-spacing-xxs: calc(var(--sa-spacing-base) / 4); 
-    --sa-spacing-xs: calc(var(--sa-spacing-base) / 2);; 
-    --sa-spacing-s: calc(var(--sa-spacing-base) * 0.75);
-    --sa-spacing-md: var(--sa-spacing-base); 
-    --sa-spacing-lg: calc(var(--sa-spacing-base) * 1.5);
-    --sa-spacing-xl: calc(var(--sa-spacing-base) * 2);
-    /* Animation */
-    --sa-transition-duration: 0.3s;
-    --sa-transition-timing-function: ease;
+	/* Colours */
+	--sa-colour-ember: #cf4517;
+	--sa-colour-cobalt: #1d376f;
+	--sa-colour-carbon: #1a1a1a;
+	--sa-colour-platinum: #e6e6e6;
+	--sa-colour-snow: #ffffff;
+	--sa-colour-sulpher: #ffbf00;
+	--sa-colour-aquamarine: #9ac4f8;
+	/* Spacing */
+	--sa-spacing-base: 16px;
+	--sa-spacing-xxs: calc(var(--sa-spacing-base) / 4);
+	--sa-spacing-xs: calc(var(--sa-spacing-base) / 2);
+	--sa-spacing-sm: calc(var(--sa-spacing-base) * 0.75);
+	--sa-spacing-md: var(--sa-spacing-base);
+	--sa-spacing-lg: calc(var(--sa-spacing-base) * 1.5);
+	--sa-spacing-xl: calc(var(--sa-spacing-base) * 2);
+	/* Animation */
+	--sa-transition-duration: 0.3s;
+	--sa-transition-timing-function: ease;
 }

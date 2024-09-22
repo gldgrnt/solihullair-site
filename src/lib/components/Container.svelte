@@ -1,8 +1,12 @@
-<section class="container"><slot /></section>
+<script lang="ts">
+	export let background = 'sa-colour-snow';
+</script>
+
+<section class="container" style="--background-color: var(--{background});"><slot /></section>
 
 <style lang="scss">
-	section {
-		--background-color: var(--sa-colour-snow);
+	.container {
+		background-color: var(--background-color);
 		padding: 60px 80px 30px;
 	}
 </style>
