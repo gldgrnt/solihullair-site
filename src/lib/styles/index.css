@@ -1,0 +1,5 @@
+@import url('_variables.css');
+
+body {
+    color: var(--sa-colour-carbon);
+}
