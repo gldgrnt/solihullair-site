@@ -1,10 +1,13 @@
 <script lang="ts">
-	export let as = 'button';
-	export let href = '';
-	export let type = 'primary';
+	type ElementType = 'a' | 'button' | 'span';
+	type Variant = 'primary' | 'secondary' | 'contact';
+
+	export let as: ElementType = 'button';
+	export let href: string;
+	export let type: Variant = 'primary';
 
 	const sharedProps = {
-		class: `button button--${type}`
+		class: `button ${type}`
 	};
 </script>
 
@@ -34,7 +37,7 @@
 			text-decoration: none;
 		}
 
-		&--primary {
+		&.primary {
 			color: var(--sa-colour-snow);
 			background-color: var(--sa-colour-ember);
 
