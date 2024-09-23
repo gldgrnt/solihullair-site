@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { page } from '$app/stores';
 	import Button from '../Button.svelte';
 	import HeaderLink from './HeaderLink.svelte';
 
