@@ -1,13 +1,9 @@
 <script>
-	import { page, navigating } from '$app/stores';
-
-	export let href;
-
-	let isActive;
-	$: if ($navigating) isActive = $page.route.id?.includes(href) || false;
+	export let href = '';
+	export let active = false;
 </script>
 
-<a class="header-link" class:header-link--active={isActive} {href}><slot /></a>
+<a class="header-link" class:active {href}><slot /></a>
 
 <style lang="scss">
 	.header-link {
@@ -46,8 +42,7 @@
 				opacity: 1;
 			}
 		}
-
-		&--active {
+		&.active {
 			--colour: var(--sa-colour-ember);
 
 			&::after {

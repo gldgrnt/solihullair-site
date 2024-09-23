@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let as = 'button';
-	export let href = undefined;
+	export let href = '';
 	export let type = 'primary';
 
 	const sharedProps = {

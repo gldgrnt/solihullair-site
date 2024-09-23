@@ -1,19 +1,36 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/stores';
 	import Button from '../Button.svelte';
 	import HeaderLink from './HeaderLink.svelte';
 
-	// const links = ['About', 'Residential', 'Commercial'];
-	const links = ['About'];
+	const links = [
+		{
+			href: '/about',
+			text: 'About'
+		},
+		{
+			href: '/services/residential',
+			text: 'Residential'
+		},
+		{
+			href: '/services/commercial',
+			text: 'Commerical'
+		}
+	];
+
+	let currentRoute = '';
+	afterNavigate(({ to }) => (currentRoute = to?.route.id || ''));
 </script>
 
 <header class="header">
 	<a href="/"><img class="header__logo" src="/logo.svg" alt="Solihull Air Logo" /></a>
 	<nav>
 		<ul class="header__link-list">
-			{#each links as link}
-				<li><HeaderLink href={`/${link.toLowerCase()}`}>{link}</HeaderLink></li>
+			{#each links as { href, text }}
+				<li><HeaderLink {href} active={currentRoute === href}>{text}</HeaderLink></li>
 			{/each}
-			<!-- <li><Button as="a" href="/contact">Contact</Button></li> -->
+			<li><Button as="a" href="/contact">Contact</Button></li>
 		</ul>
 	</nav>
 </header>
