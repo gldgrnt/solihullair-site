@@ -1,7 +1,3 @@
-@import url('_reset.css');
+/* @import url('_reset.css'); */
 @import url('_variables.css');
 @import url('_fonts.css');
-
-body {
-	color: var(--sa-colour-carbon);
-}
