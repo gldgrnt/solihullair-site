@@ -64,7 +64,7 @@
 			<IconButton
 				variant="platinum"
 				active={showMobileNavigation}
-				handleClick={handleBurgerMenuClick}
+				on:click={handleBurgerMenuClick}
 				aria-label="Open menu"
 			>
 				<Burger />
@@ -73,7 +73,7 @@
 	</div>
 	{#if showMobileNavigation}
 		<div class="header__mobile-navigation">
-			<MobileNav {currentRoute} {links} closeMobileNav={() => (showMobileNavigation = false)} />
+			<MobileNav {currentRoute} {links} on:click={() => (showMobileNavigation = false)} />
 		</div>
 	{/if}
 </header>

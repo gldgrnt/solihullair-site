@@ -2,17 +2,10 @@
 	export let as: 'a' | 'button' = 'button';
 	export let variant: 'snow' | 'cobalt' | 'platinum' | 'ember' = 'snow';
 	export let active = false;
-	export let handleClick = () => {};
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<svelte:element
-	this={as}
-	class={`icon-button ${variant}`}
-	{...$$restProps}
-	class:active
-	on:click={handleClick}
->
+<svelte:element this={as} class={`icon-button ${variant}`} {...$$restProps} class:active on:click>
 	<slot />
 </svelte:element>
 
@@ -35,7 +28,6 @@
 
 		& :global(path) {
 			fill: var(--sa-colour-carbon);
-			opacity: 0.5;
 		}
 
 		&:hover,

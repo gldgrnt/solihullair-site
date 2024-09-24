@@ -5,7 +5,6 @@
 
 	export let links: Navigation['links'];
 	export let currentRoute: Navigation['currentRoute'];
-	export let closeMobileNav: () => void;
 </script>
 
 <nav>
@@ -14,7 +13,7 @@
 			<li><a class:active={currentRoute === href} {href}>{text}</a></li>
 		{/each}
 	</ul>
-	<IconButton handleClick={closeMobileNav} aria-label="Close menu">
+	<IconButton on:click aria-label="Close menu">
 		<Cross />
 	</IconButton>
 </nav>
