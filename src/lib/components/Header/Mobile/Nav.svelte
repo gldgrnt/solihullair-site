@@ -1,8 +1,11 @@
 <script lang="ts">
+	import IconButton from '$lib/components/IconButton.svelte';
+	import Cross from '$lib/components/Icons/Cross.svelte';
 	import type { Navigation } from '../types';
 
 	export let links: Navigation['links'];
 	export let currentRoute: Navigation['currentRoute'];
+	export let closeMobileNav: () => void;
 </script>
 
 <nav>
@@ -11,9 +14,16 @@
 			<li><a class:active={currentRoute === href} {href}>{text}</a></li>
 		{/each}
 	</ul>
+	<IconButton handleClick={closeMobileNav} aria-label="Close menu">
+		<Cross />
+	</IconButton>
 </nav>
 
 <style lang="scss">
+	nav {
+		text-align: center;
+	}
+
 	ul {
 		display: flex;
 		flex-direction: column;

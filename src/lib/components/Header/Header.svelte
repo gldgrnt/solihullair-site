@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
+	import IconButton from '../IconButton.svelte';
+	import Burger from '../Icons/Burger.svelte';
+	import Phone from '../Icons/Phone.svelte';
 	import DesktopNav from './Desktop/Nav.svelte';
-	import BurgerMenu from './Mobile/BurgerMenu.svelte';
 	import MobileNav from './Mobile/Nav.svelte';
 
 	// Site links
@@ -56,11 +58,23 @@
 			<DesktopNav {currentRoute} {links} />
 		</div>
 		<div class="header__mobile">
-			<BurgerMenu active={showMobileNavigation} onClick={handleBurgerMenuClick} />
+			<IconButton variant="cobalt" as="a" href="tel:+44000000000" aria-label="Call SolihullAir">
+				<Phone />
+			</IconButton>
+			<IconButton
+				variant="platinum"
+				active={showMobileNavigation}
+				handleClick={handleBurgerMenuClick}
+				aria-label="Open menu"
+			>
+				<Burger />
+			</IconButton>
 		</div>
 	</div>
 	{#if showMobileNavigation}
-		<div class="header__mobile-navigation"><MobileNav {currentRoute} {links} /></div>
+		<div class="header__mobile-navigation">
+			<MobileNav {currentRoute} {links} closeMobileNav={() => (showMobileNavigation = false)} />
+		</div>
 	{/if}
 </header>
 
