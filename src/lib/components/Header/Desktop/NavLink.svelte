@@ -3,10 +3,10 @@
 	export let active = false;
 </script>
 
-<a class="header-link" class:active {href}><slot /></a>
+<a class="nav-link" class:active {href}><slot /></a>
 
 <style lang="scss">
-	.header-link {
+	.nav-link {
 		--colour: var(--sa-colour-carbon);
 		--indicator-size: 5px;
 

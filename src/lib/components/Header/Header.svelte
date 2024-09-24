@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import Button from '../Button.svelte';
-	import BurgerMenu from './BurgerMenu.svelte';
-	import HeaderLink from './HeaderLink.svelte';
+	import DesktopNav from './Desktop/Nav.svelte';
+	import BurgerMenu from './Mobile/BurgerMenu.svelte';
+	import MobileNav from './Mobile/Nav.svelte';
 
+	// Site links
 	const links = [
 		{
 			href: '/about',
@@ -15,64 +16,105 @@
 		},
 		{
 			href: '/services/commercial',
-			text: 'Commerical'
+			text: 'Commercial'
+		},
+		{
+			href: '/contact',
+			text: 'Contact'
 		}
 	];
 
+	// Mobile navigation show/hide
+	let showMobileNavigation = false;
+	function handleBurgerMenuClick() {
+		showMobileNavigation = !showMobileNavigation;
+		const body = document.querySelector('body');
+
+		if (body) {
+			if (showMobileNavigation) {
+				body.style.height = '100vh';
+				body.style.overflow = 'hidden';
+			} else {
+				body.style.height = '';
+				body.style.overflow = '';
+			}
+		}
+	}
+
+	// Current site path
 	let currentRoute = '';
-	afterNavigate(({ to }) => (currentRoute = to?.route.id || ''));
+	afterNavigate(({ to }) => {
+		currentRoute = to?.route.id || '';
+		showMobileNavigation = false;
+	});
 </script>
 
-<header class="header">
-	<a href="/"><img class="header__logo" src="/logo.svg" alt="Solihull Air Logo" /></a>
-	<!-- Desktop nav -->
-	<nav class="header__desktop-menu">
-		<ul class="header__link-list">
-			{#each links as { href, text }}
-				<li><HeaderLink {href} active={currentRoute === href}>{text}</HeaderLink></li>
-			{/each}
-			<li><Button as="a" href="/contact">Contact</Button></li>
-		</ul>
-	</nav>
-	<!-- Mobile nav -->
-	<div class="header__mobile-menu">
-		<BurgerMenu />
+<header class:mobile-nav-open={showMobileNavigation}>
+	<div class="header">
+		<a href="/"><img class="header__logo" src="/logo.svg" alt="Solihull Air Logo" /></a>
+		<div class="header__desktop">
+			<DesktopNav {currentRoute} {links} />
+		</div>
+		<div class="header__mobile">
+			<BurgerMenu active={showMobileNavigation} onClick={handleBurgerMenuClick} />
+		</div>
 	</div>
+	{#if showMobileNavigation}
+		<div class="header__mobile-navigation"><MobileNav {currentRoute} {links} /></div>
+	{/if}
 </header>
 
-<style>
-	.header {
+<style lang="scss">
+	header {
 		position: sticky;
 		top: 0;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+
+		&.mobile-nav-open {
+			height: 100vh;
+		}
+	}
+
+	.header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: var(--sa-spacing-md) var(--sa-spacing-xl);
 		background-color: var(--sa-colour-snow);
+		position: relative;
+		z-index: 1;
 	}
 
 	.header__logo {
 		height: 50px;
 	}
 
-	.header__link-list {
-		display: flex;
-		gap: var(--sa-spacing-lg);
-		list-style-type: none;
-		margin: 0;
-		align-items: center;
-	}
-
-	.header__mobile-menu {
+	[class^='header__mobile'] {
 		display: none;
 	}
 
+	.header__mobile-navigation {
+		flex: 1;
+		background-color: var(--sa-colour-platinum);
+	}
+
 	@media screen and (max-width: 767px) {
-		.header__mobile-menu {
+		.header {
+			padding: var(--sa-spacing-md);
+		}
+
+		[class^='header__mobile'] {
 			display: block;
 		}
 
-		.header__desktop-menu {
+		.header__mobile {
+			display: flex;
+			gap: var(--sa-spacing-sm);
+		}
+
+		.header__desktop {
 			display: none;
 		}
 	}

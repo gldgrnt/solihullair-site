@@ -1,8 +1,9 @@
 <script lang="ts">
 	export let active = false;
+	export let onClick: () => void;
 
-	function toggleActive() {
-		return (active = !active);
+	function handleClick() {
+		onClick();
 	}
 </script>
 
@@ -11,7 +12,7 @@
 	aria-label="Open menu"
 	class="burger-menu"
 	class:active
-	on:click={toggleActive}
+	on:click={handleClick}
 >
 	{#each { length: 3 } as _}
 		<span class="burger-menu__row"></span>
@@ -34,12 +35,7 @@
 		}
 
 		&.active {
-			background-color: var(--sa-colour-carbon);
-			filter: brightness(150%);
-
-			.burger-menu__row {
-				background-color: var(--sa-colour-platinum);
-			}
+			filter: brightness(60%);
 		}
 	}
 
