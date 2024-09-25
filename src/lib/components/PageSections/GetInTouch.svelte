@@ -1,0 +1,66 @@
+<script lang="ts">
+	import { getContext } from 'svelte';
+	import type { Writable } from 'svelte/store';
+	import Button from '../Button.svelte';
+	import Container from '../Container.svelte';
+	import Flex from '../Flex.svelte';
+	import Section from '../Section.svelte';
+	import Phone from '../Icons/Phone.svelte';
+	import Mail from '../Icons/Mail.svelte';
+
+	let isDesktop: boolean;
+
+	const innerWidth: Writable<number> = getContext('innerWidth');
+	innerWidth.subscribe((width) => (isDesktop = width > 767));
+
+	const containerProps = {
+		paddingBlock: '120px',
+		paddingInline: '0px'
+	};
+
+	const flexProps = {
+		direction: 'column',
+		align: 'center',
+		gap: 'var(--sa-spacing-lg)'
+	};
+</script>
+
+<div class="page-section-get-in-touch">
+	<Flex align="stretch" direction={isDesktop ? 'row' : 'column'}>
+		<Section background="cobalt">
+			<Container {...containerProps}>
+				<Flex {...flexProps}>
+					<h2 class="h2">Message us</h2>
+					<p>
+						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
+					</p>
+					<Button as="a" type="cobalt" inverse href="#f">
+						<Phone slot="icon" />
+						07123 456 789
+					</Button>
+				</Flex>
+			</Container>
+		</Section>
+		<Section background="ember">
+			<Container {...containerProps}>
+				<Flex {...flexProps}>
+					<h2 class="h2">Email us</h2>
+					<p>
+						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
+					</p>
+					<Button as="a" type="ember" inverse href="#f"><Mail slot="icon" />Email us</Button>
+				</Flex>
+			</Container>
+		</Section>
+	</Flex>
+</div>
+
+<style lang="scss">
+	.page-section-get-in-touch {
+		text-align: center;
+	}
+
+	p {
+		width: clamp(300px, 75%, 450px);
+	}
+</style>

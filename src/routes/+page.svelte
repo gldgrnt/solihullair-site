@@ -1,11 +1,8 @@
 <script lang="ts">
-	import Container from '$lib/components/Container.svelte';
+	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 </script>
 
-<Container background="sa-colour-ember">
-	<h1>Welcome to SvelteKit</h1>
-	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-</Container>
+<GetInTouch />
 
 <style>
 	h1 {

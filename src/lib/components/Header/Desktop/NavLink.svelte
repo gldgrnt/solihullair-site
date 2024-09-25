@@ -12,7 +12,8 @@
 
 		display: inline-block;
 		position: relative;
-		font-family: Archivo;
+		font-family: var(--sa-font-family-body);
+		font-size: var(--sa-font-size-small);
 		font-weight: 800;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -36,14 +37,14 @@
 
 		&:hover,
 		&:focus {
-			--colour: var(--sa-colour-ember);
+			--colour: var(--sa-colour-cobalt);
 
 			&::after {
 				opacity: 1;
 			}
 		}
 		&.active {
-			--colour: var(--sa-colour-ember);
+			--colour: var(--sa-colour-cobalt);
 
 			&::after {
 				opacity: 1;

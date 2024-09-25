@@ -33,6 +33,11 @@ h5,
 	line-height: var(--sa-line-height);
 }
 
+.h2 {
+	font-size: var(--sa-font-size-subheading);
+	font-weight: 500;
+}
+
 .h5 {
 	font-family: var(--sa-font-size-body);
 	font-size: var(--sa-font-size-small);

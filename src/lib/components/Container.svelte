@@ -1,16 +1,27 @@
 <script lang="ts">
-	export let background = 'sa-colour-snow';
+	import { getContext } from 'svelte';
+	import type { Writable } from 'svelte/store';
+
+	export let paddingBlock = '60px';
+	export let paddingInline = '80px';
+
+	let isDesktop: boolean;
+
+	const innerWidth: Writable<number> = getContext('innerWidth');
+	innerWidth.subscribe((width) => (isDesktop = width > 767));
+
+	const mobilePadding = '40px';
+	$: pb = isDesktop ? paddingBlock : mobilePadding;
+	$: pi = isDesktop ? paddingInline : mobilePadding;
 </script>
 
-<section class="container" style="--background-color: var(--{background});"><slot /></section>
+<div class="container" style="--padding-block: {pb}; --padding-inline: {pi};">
+	<slot />
+</div>
 
 <style lang="scss">
 	.container {
-		background-color: var(--background-color);
-		padding: 60px 80px;
-
-		@media screen and (max-width: 767px) {
-			padding: 40px var(--sa-spacing-md);
-		}
+		padding-block: var(--padding-block);
+		padding-inline: var(--padding-inline);
 	}
 </style>
