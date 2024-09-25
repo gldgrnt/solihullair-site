@@ -11,11 +11,11 @@
 
 <footer>
 	<Container>
-		<Grid>
-			<GridItem span={3}>
+		<Grid --justify="space-between">
+			<GridItem span="3">
 				<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="Solihull Air Logo" /></a>
 			</GridItem>
-			<GridItem span={7}>
+			<GridItem span="7 / 13" justify="flex-end">
 				<LinkSection direction="horizontal">
 					<h3 slot="title">Social</h3>
 					<IconButton small variant="carbon">
@@ -40,11 +40,17 @@
 				</LinkSection>
 			</GridItem>
 		</Grid>
+		<hr />
+		<Grid>
+			<GridItem span="6">Copyright © 2024 SolihullAir</GridItem>
+			<GridItem span="6 / 13" justify="flex-end">Website by GG</GridItem>
+		</Grid>
 	</Container>
 </footer>
 
 <style lang="scss">
 	.footer__logo {
 		width: 100%;
+		max-width: 200px;
 	}
 </style>
