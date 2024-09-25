@@ -5,12 +5,16 @@
 	import { setContext } from 'svelte';
 
 	$: innerWidth = 0;
-	let isDesktop = writable('desktop');
-	setContext('isDesktop', isDesktop);
-	$isDesktop = innerWidth > 767 ? 'desktop' : 'mobile';
+	const innerWidthStore = writable(innerWidth);
+
+	setContext('innerWidth', innerWidthStore);
+	$: innerWidthStore.set(innerWidth);
 </script>
 
 <svelte:window bind:innerWidth />
-<Layout>
-	<slot />
-</Layout>
+
+{#if innerWidth > 0}
+	<Layout>
+		<slot />
+	</Layout>
+{/if}

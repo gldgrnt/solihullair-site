@@ -1,11 +1,17 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
+	import type { Writable } from 'svelte/store';
 	import Flex from '../Flex.svelte';
-	let isDesktop = getContext('isDesktop');
 
 	export let direction: 'row' | 'column' = 'column';
-	$: align = isDesktop ? 'flex-end' : 'flex-start';
+
+	let isDesktop: boolean;
 	let gap = 'var(--sa-spacing-sm)';
+
+	const innerWidth: Writable<number> = getContext('innerWidth');
+	innerWidth.subscribe((width) => (isDesktop = width > 767));
+
+	$: align = isDesktop ? 'flex-end' : 'flex-start';
 </script>
 
 <section>

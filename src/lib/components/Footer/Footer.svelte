@@ -1,4 +1,7 @@
-<script>
+<script lang="ts">
+	import { getContext } from 'svelte';
+	import type { Writable } from 'svelte/store';
+
 	import Container from '../Container.svelte';
 	import Flex from '../Flex.svelte';
 	import Grid from '../Grid/Grid.svelte';
@@ -10,13 +13,15 @@
 	import Divider from './Divider.svelte';
 	import LinkSection from './LinkSection.svelte';
 
-	import { getContext } from 'svelte';
-	let isDesktop = getContext('isDesktop');
+	let isDesktop: boolean;
+
+	const innerWidth: Writable<number> = getContext('innerWidth');
+	innerWidth.subscribe((width) => (isDesktop = width > 767));
 </script>
 
 <footer>
 	<Container>
-		<Grid --justify="space-between">
+		<Grid justify="space-between">
 			<GridItem span={isDesktop ? '3' : '4'}>
 				<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="Solihull Air Logo" /></a>
 			</GridItem>
@@ -51,9 +56,11 @@
 			</GridItem>
 		</Grid>
 		<Divider />
-		<Grid>
-			<GridItem span="6"><span>Copyright © 2024 SolihullAir</span></GridItem>
-			<GridItem span="6 / 13" justify="flex-end"><span>Website by GG</span></GridItem>
+		<Grid justify={isDesktop ? 'space-between' : 'flex-start'}>
+			<GridItem span="4"><span>Copyright © 2024 SolihullAir</span></GridItem>
+			<GridItem span={isDesktop ? '4 / 13' : '4'} justify={isDesktop ? 'flex-end' : 'flex-start'}
+				><span>Website by GG</span></GridItem
+			>
 		</Grid>
 	</Container>
 </footer>

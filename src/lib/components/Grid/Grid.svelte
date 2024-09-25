@@ -1,15 +1,24 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
-	let isDesktop = getContext('isDesktop');
-	let template = isDesktop ? 'repeat(12, 1fr)' : 'repeat(4, 1fr)';
+	import type { Writable } from 'svelte/store';
+
+	export let justify = 'flex-start';
+
+	let isDesktop: boolean;
+
+	const innerWidth: Writable<number> = getContext('innerWidth');
+	innerWidth.subscribe((width) => (isDesktop = width > 767));
+
+	$: template = isDesktop ? 'repeat(12, 1fr)' : 'repeat(4, 1fr)';
 </script>
 
-<div class="grid" style={`grid-template-columns: ${template};`}><slot /></div>
+<div class="grid" style="grid-template-columns: {template}; justify-content: {justify};">
+	<slot />
+</div>
 
 <style lang="scss">
 	.grid {
 		display: grid;
 		gap: var(--sa-spacing-md);
-		justify-content: var(--justify, 'flex-start');
 	}
 </style>
