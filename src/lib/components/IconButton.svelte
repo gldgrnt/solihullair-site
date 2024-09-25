@@ -1,11 +1,19 @@
 <script lang="ts">
 	export let as: 'a' | 'button' = 'button';
-	export let variant: 'snow' | 'cobalt' | 'platinum' | 'ember' = 'snow';
+	export let variant: 'snow' | 'cobalt' | 'platinum' | 'ember' | 'carbon' = 'snow';
+	export let small = false;
 	export let active = false;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<svelte:element this={as} class={`icon-button ${variant}`} {...$$restProps} class:active on:click>
+<svelte:element
+	this={as}
+	class={`icon-button ${variant}`}
+	{...$$restProps}
+	class:active
+	class:small
+	on:click
+>
 	<slot />
 </svelte:element>
 
@@ -23,6 +31,17 @@
 		}
 	}
 
+	/* Sizes */
+	.small {
+		padding: var(--sa-spacing-xs);
+
+		& :global(svg) {
+			height: 16px;
+			width: 16px;
+		}
+	}
+
+	/* Colours */
 	.snow {
 		background-color: var(--sa-colour-snow);
 
@@ -66,6 +85,14 @@
 		&:focus,
 		&.active {
 			filter: brightness(90%);
+		}
+	}
+
+	.carbon {
+		background-color: var(--sa-colour-carbon);
+
+		& :global(path) {
+			fill: var(--sa-colour-snow);
 		}
 	}
 </style>

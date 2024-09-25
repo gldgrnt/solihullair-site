@@ -1,6 +1,6 @@
 <script>
 	import Header from './Header/Header.svelte';
-	import Footer from './Footer.svelte';
+	import Footer from './Footer/Footer.svelte';
 </script>
 
 <div class="layout">

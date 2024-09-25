@@ -7,6 +7,6 @@
 <style lang="scss">
 	.grid-item {
 		display: block;
-		grid-column: 1 / span var(--span);
+		grid-column: span var(--span);
 	}
 </style>

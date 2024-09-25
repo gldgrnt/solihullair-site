@@ -1,4 +1,8 @@
 @font-face {
-    font-family: Archivo, Arial, Helvetica, sans-serif;
-    src: url('/archivo.ttf');
+	font-family: Archivo, Arial, Helvetica, sans-serif;
+	src: url('/archivo.ttf');
+}
+
+h2 {
+	color: red;
 }
