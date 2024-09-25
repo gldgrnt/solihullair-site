@@ -20,24 +20,24 @@
 			<GridItem span="7 / 13" justify="flex-end">
 				<Flex gap="clamp(16px, 5vw, 120px)">
 					<LinkSection direction="row">
-						<h3 slot="title">Social</h3>
-						<IconButton small variant="carbon">
+						<h3 slot="title" class="h5">Social</h3>
+						<IconButton small variant="carbon" as="a" href="/" target="_blank">
 							<Whatsapp />
 						</IconButton>
-						<IconButton small variant="carbon">
+						<IconButton small variant="carbon" as="a" href="/" target="_blank">
 							<Instagram />
 						</IconButton>
-						<IconButton small variant="carbon">
+						<IconButton small variant="carbon" as="a" href="/" target="_blank">
 							<Facebook />
 						</IconButton>
 					</LinkSection>
 					<LinkSection>
-						<h3 slot="title">Contact</h3>
+						<h3 slot="title" class="h5">Contact</h3>
 						<a href="tel:07123 456 789">07123 456 789</a>
 						<a href="mailto:zeph@solihullair.co.uk">zeph@solihullair.co.uk</a>
 					</LinkSection>
 					<LinkSection>
-						<h3 slot="title">Services</h3>
+						<h3 slot="title" class="h5">Services</h3>
 						<a href="/services/residential">Residential</a>
 						<a href="/services/commerical">Commerical</a>
 					</LinkSection>
@@ -46,8 +46,8 @@
 		</Grid>
 		<Divider />
 		<Grid>
-			<GridItem span="6">Copyright © 2024 SolihullAir</GridItem>
-			<GridItem span="6 / 13" justify="flex-end">Website by GG</GridItem>
+			<GridItem span="6"><span>Copyright © 2024 SolihullAir</span></GridItem>
+			<GridItem span="6 / 13" justify="flex-end"><span>Website by GG</span></GridItem>
 		</Grid>
 	</Container>
 </footer>
@@ -56,5 +56,9 @@
 	.footer__logo {
 		width: 100%;
 		max-width: 200px;
+	}
+
+	span {
+		font-size: var(--sa-font-size-tiny);
 	}
 </style>

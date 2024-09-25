@@ -2,6 +2,16 @@
 @import url('_variables.scss');
 @import url('_fonts.scss');
 
-h3 {
-	color: red;
+body {
+	color: var(--sa-colour-carbon);
+}
+
+a {
+	color: var(--sa-colour-carbon);
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
 }

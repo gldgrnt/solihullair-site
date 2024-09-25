@@ -15,6 +15,25 @@
 	--sa-spacing-md: var(--sa-spacing-base);
 	--sa-spacing-lg: calc(var(--sa-spacing-base) * 1.5);
 	--sa-spacing-xl: calc(var(--sa-spacing-base) * 2);
+	/* Typography */
+	--sa-font-family-heading: Lexend, Arial, Helvetica, sans-serif;
+	--sa-font-family-body: Archivo, Arial, Helvetica, sans-serif;
+
+	--sa-font-size-title: 64px;
+	--sa-font-size-heading: 48px;
+	--sa-font-size-subheading: 32px;
+	--sa-font-size-body: 20px;
+	--sa-font-size-small: 16px;
+	--sa-font-size-tiny: 14px;
+
+	@media screen and (max-width: 767px) {
+		--sa-font-size-title: 40px;
+		--sa-font-size-heading: 32px;
+		--sa-font-size-subheading: 24px;
+		--sa-font-size-body: 18px;
+	}
+
+	--sa-line-height: 1.5;
 	/* Animation */
 	--sa-transition-duration: 0.3s;
 	--sa-transition-timing-function: ease;

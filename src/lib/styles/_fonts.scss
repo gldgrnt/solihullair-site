@@ -3,6 +3,39 @@
 	src: url('/archivo.ttf');
 }
 
-h2 {
-	color: red;
+@font-face {
+	font-family: Lexend, Arial, Helvetica, sans-serif;
+	src: url('/lexend.ttf');
+}
+
+body,
+p,
+a,
+span,
+div {
+	font-family: var(--sa-font-family-body);
+	font-size: var(--sa-font-size-body);
+	line-height: var(--sa-line-height);
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+	font-family: var(--sa-font-family-heading);
+	line-height: var(--sa-line-height);
+}
+
+.h5 {
+	font-family: var(--sa-font-size-body);
+	font-size: var(--sa-font-size-small);
+	font-weight: 900;
+	text-transform: uppercase;
 }
