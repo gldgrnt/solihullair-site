@@ -26,15 +26,15 @@
 	--sa-font-size-small: 16px;
 	--sa-font-size-tiny: 14px;
 
+	--sa-line-height: 1.5;
+	/* Animation */
+	--sa-transition-duration: 0.3s;
+	--sa-transition-timing-function: ease;
+
 	@media screen and (max-width: 767px) {
 		--sa-font-size-title: 40px;
 		--sa-font-size-heading: 32px;
 		--sa-font-size-subheading: 24px;
 		--sa-font-size-body: 18px;
 	}
-
-	--sa-line-height: 1.5;
-	/* Animation */
-	--sa-transition-duration: 0.3s;
-	--sa-transition-timing-function: ease;
 }

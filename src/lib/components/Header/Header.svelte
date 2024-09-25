@@ -53,7 +53,7 @@
 
 <header class:mobile-nav-open={showMobileNavigation}>
 	<div class="header">
-		<a href="/"><img class="header__logo" src="/logo.svg" alt="Solihull Air Logo" /></a>
+		<a href="/" class="header__logo"><img src="/logo.svg" alt="Solihull Air Logo" /></a>
 		<div class="header__desktop">
 			<DesktopNav {currentRoute} {links} />
 		</div>
@@ -102,7 +102,11 @@
 	}
 
 	.header__logo {
-		height: 50px;
+		display: inline-flex;
+
+		& img {
+			height: 50px;
+		}
 	}
 
 	[class^='header__mobile'] {
