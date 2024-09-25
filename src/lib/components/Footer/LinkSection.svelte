@@ -1,23 +1,17 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import Flex from '../Flex.svelte';
-	let breakpoint = getContext('breakpoint');
+	let isDesktop = getContext('isDesktop');
 
 	export let direction: 'row' | 'column' = 'column';
+	$: align = isDesktop ? 'flex-end' : 'flex-start';
+	let gap = 'var(--sa-spacing-sm)';
 </script>
 
 <section>
-	<Flex
-		direction="column"
-		gap="var(--sa-spacing-sm)"
-		align={breakpoint === 'desktop' ? 'flex-end' : 'flex-start'}
-	>
+	<Flex direction="column" {gap} {align}>
 		<slot name="title">Title</slot>
-		<Flex
-			{direction}
-			gap="var(--sa-spacing-sm)"
-			align={breakpoint === 'desktop' ? 'flex-end' : 'flex-start'}
-		>
+		<Flex {direction} {gap} {align}>
 			<slot />
 		</Flex>
 	</Flex>

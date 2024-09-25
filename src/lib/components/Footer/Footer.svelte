@@ -11,22 +11,19 @@
 	import LinkSection from './LinkSection.svelte';
 
 	import { getContext } from 'svelte';
-	let breakpoint = getContext('breakpoint');
+	let isDesktop = getContext('isDesktop');
 </script>
 
 <footer>
 	<Container>
 		<Grid --justify="space-between">
-			<GridItem span={breakpoint === 'desktop' ? '3' : '4'}>
+			<GridItem span={isDesktop ? '3' : '4'}>
 				<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="Solihull Air Logo" /></a>
 			</GridItem>
-			<GridItem
-				span={breakpoint === 'desktop' ? '7 / 13' : '4'}
-				justify={breakpoint === 'desktop' ? 'flex-end' : 'flex-start'}
-			>
+			<GridItem span={isDesktop ? '7 / 13' : '4'} justify={isDesktop ? 'flex-end' : 'flex-start'}>
 				<Flex
-					gap={breakpoint === 'desktop' ? 'clamp(16px, 5vw, 120px)' : 'var(--sa-spacing-lg)'}
-					direction={breakpoint === 'desktop' ? 'row' : 'column'}
+					gap={isDesktop ? 'clamp(16px, 5vw, 120px)' : 'var(--sa-spacing-lg)'}
+					direction={isDesktop ? 'row' : 'column'}
 				>
 					<LinkSection direction="row">
 						<h3 slot="title" class="h5">Social</h3>
