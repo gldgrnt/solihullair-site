@@ -33,13 +33,14 @@
 		<Section background="cobalt">
 			<Container {...containerProps}>
 				<Flex {...flexProps}>
-					<h2 class="h2">Message us</h2>
+					<h2 class="h2">Call us</h2>
 					<p>
-						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
+						Give us a call if you need immediate assistance with installation, maintainance, or
+						repair.
 					</p>
 					<Button as="a" colour="cobalt" inverse href={phone.link}>
 						<Phone slot="icon" />
-						07123 456 789
+						{phone.text}
 					</Button>
 				</Flex>
 			</Container>
@@ -48,9 +49,7 @@
 			<Container {...containerProps}>
 				<Flex {...flexProps}>
 					<h2 class="h2">Get a quote</h2>
-					<p>
-						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
-					</p>
+					<p>Send us an email enquiry and we can get back to you with a more detailed response.</p>
 					<Button as="a" colour="ember" inverse href={email.link}
 						><Mail slot="icon" />Email us</Button
 					>
