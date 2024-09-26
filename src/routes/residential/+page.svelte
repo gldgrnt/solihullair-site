@@ -1,14 +1,11 @@
 <script lang="ts">
-	import AboutUs from '$lib/components/PageSections/AboutUs.svelte';
 	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 	import PageIntro from '$lib/components/PageSections/PageIntro.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
-	import WhatWeDo from '$lib/components/PageSections/WhatWeDo.svelte';
-	import WhyChooseUs from '$lib/components/PageSections/WhyChooseUs.svelte';
 </script>
 
 <PageTitle
-	title="About"
+	title="Residential"
 	description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet lectus velit. "
 />
 
@@ -21,7 +18,4 @@
 	</p>
 </PageIntro>
 
-<AboutUs showLink={false} />
-<WhatWeDo />
-<WhyChooseUs />
 <GetInTouch />

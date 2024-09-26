@@ -13,11 +13,11 @@
 			text: 'About'
 		},
 		{
-			href: '/services/residential',
+			href: '/residential',
 			text: 'Residential'
 		},
 		{
-			href: '/services/commercial',
+			href: '/commercial',
 			text: 'Commercial'
 		},
 		{
