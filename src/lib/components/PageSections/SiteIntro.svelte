@@ -1,8 +1,10 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Button from '../Button.svelte';
 	import Container from '../Container.svelte';
 	import Flex from '../Flex.svelte';
 	import Logotype from '../Icons/Logotype.svelte';
+	import Phone from '../Icons/Phone.svelte';
 	import Section from '../Section.svelte';
 
 	const paddingBlock = '80px';
@@ -23,16 +25,25 @@
 		<source src="/aircon.webm" type="video/webm" />
 		<source src="/aircon.mp4" type="video/mp4" />
 	</video>
+
 	<Section background="transparent">
 		<Container {paddingBlock}>
 			<Container {paddingBlock}>
 				<Flex direction="column" align="center" gap="var(--sa-spacing-lg)">
-					<Logotype />
+					<div class="logo-container">
+						<Logotype />
+					</div>
 					<h1 class="h1">
 						<span>SolihullAir.</span>
 						Your local air conditioning and refrigeration specialist.
 					</h1>
-					<Button as="a" href="/contact" animation="fade">Get in touch</Button>
+					<Flex gap="var(--sa-spacing-md)">
+						<Button as="a" href="/contact" animation="fade">
+							<Phone slot="icon" />
+							Call us
+						</Button>
+						<Button as="a" href="/contact" animation="fade" colour="ember">Get in touch</Button>
+					</Flex>
 				</Flex>
 			</Container>
 		</Container>
@@ -68,10 +79,14 @@
 			opacity: 0.7;
 		}
 
-		:global(svg) {
+		.logo-container {
 			width: 100%;
-			height: auto;
 			max-width: 670px;
+
+			:global(svg) {
+				height: auto;
+				width: 100%;
+			}
 		}
 	}
 
