@@ -14,7 +14,7 @@
 		position: relative;
 		font-family: var(--sa-font-family-body);
 		font-size: var(--sa-font-size-small);
-		font-weight: 800;
+		font-weight: 700;
 		text-decoration: none;
 		text-transform: uppercase;
 		color: var(--colour);
