@@ -26,6 +26,24 @@
 		}
 	];
 
+	const disableBodyScroll = () => {
+		const body = document.querySelector('body');
+
+		if (body) {
+			body.style.height = '100vh';
+			body.style.overflow = 'hidden';
+		}
+	};
+
+	const enableBodyScroll = () => {
+		const body = document.querySelector('body');
+
+		if (body) {
+			body.style.height = '';
+			body.style.overflow = '';
+		}
+	};
+
 	// Mobile navigation show/hide
 	let showMobileNavigation = false;
 	function handleBurgerMenuClick() {
@@ -33,13 +51,8 @@
 		const body = document.querySelector('body');
 
 		if (body) {
-			if (showMobileNavigation) {
-				body.style.height = '100vh';
-				body.style.overflow = 'hidden';
-			} else {
-				body.style.height = '';
-				body.style.overflow = '';
-			}
+			if (showMobileNavigation) disableBodyScroll();
+			else enableBodyScroll();
 		}
 	}
 
@@ -48,20 +61,16 @@
 	afterNavigate(({ to }) => {
 		currentRoute = to?.route.id || '';
 		showMobileNavigation = false;
+		enableBodyScroll();
 	});
 
 	// Remove overflow if swapping between
 	const handleResize = (e: UIEvent & { currentTarget: EventTarget & Window }) => {
 		const isDesktop = e.currentTarget.innerWidth > 767;
-		const body = document.querySelector('body');
 
 		if (isDesktop) {
 			showMobileNavigation = false;
-
-			if (body) {
-				body.style.height = '';
-				body.style.overflow = '';
-			}
+			enableBodyScroll();
 		}
 	};
 </script>
@@ -101,6 +110,7 @@
 		display: flex;
 		flex-direction: column;
 		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+		z-index: 1000;
 
 		&.mobile-nav-open {
 			height: 100vh;
