@@ -20,8 +20,8 @@
 		disableremoteplayback
 		playsinline
 	>
-		<source src="./aircon.webm" type="video/webm" />
-		<source src="./aircon.mp4" type="video/mp4" />
+		<source src="/aircon.webm" type="video/webm" />
+		<source src="/aircon.mp4" type="video/mp4" />
 	</video>
 	<Section background="transparent">
 		<Container {paddingBlock}>

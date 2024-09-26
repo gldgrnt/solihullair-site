@@ -44,6 +44,7 @@
 
 		&.active {
 			color: var(--sa-colour-ember);
+			text-decoration: underline;
 		}
 	}
 </style>

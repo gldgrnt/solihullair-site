@@ -25,8 +25,8 @@
 				</GridItem>
 				<GridItem span={isDesktop ? '5 / 13' : '4'}>
 					<Flex gap="var(--sa-spacing-xl)">
-						<img src="./city-guilds-qualified.png" alt="City Guilds Qualification" />
-						<img src="./refcom-gas.png" alt="Refcom F-Gas Certification" />
+						<img src="/city-guilds-qualified.png" alt="City Guilds Qualification" />
+						<img src="/refcom-gas.png" alt="Refcom F-Gas Certification" />
 					</Flex>
 				</GridItem>
 			</Grid>

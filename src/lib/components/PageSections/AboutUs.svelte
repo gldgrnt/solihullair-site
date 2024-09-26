@@ -8,14 +8,12 @@
 	import Section from '../Section.svelte';
 	import Link from '../Link.svelte';
 
+	export let showLink = true;
+
 	let isDesktop: boolean;
-	let isSmallScreen: boolean;
 
 	const innerWidth: Writable<number> = getContext('innerWidth');
-	innerWidth.subscribe((width) => {
-		isDesktop = width > 767;
-		isSmallScreen = width < 999;
-	});
+	innerWidth.subscribe((width) => (isDesktop = width > 767));
 </script>
 
 <Section background="cobalt">
@@ -23,7 +21,7 @@
 		<Grid align="center">
 			<GridItem span={isDesktop ? '5' : '4'}>
 				<Flex justify={isDesktop ? 'flex-end' : 'flex-start'}>
-					<img src="./map.svg" alt="" />
+					<img src="/map.svg" alt="" />
 				</Flex>
 			</GridItem>
 			<GridItem span={isDesktop ? '6 / 13' : '4'}>
@@ -33,14 +31,9 @@
 							>Midlands, Worcestershire, Shropshire</strong
 						>.
 					</p>
-					{#if !isSmallScreen}
-						<p>
-							Morbi id mauris sit amet odio dapibus sodales. Nulla ac sagittis elit. Proin tempor,
-							purus eget tincidunt aliquet, enim nisl pharetra arcu, sed porttitor ligula tortor at
-							ligula.
-						</p>
+					{#if showLink}
+						<Link href="/about">Read more</Link>
 					{/if}
-					<Link href="/about">Read more</Link>
 				</Flex>
 			</GridItem>
 		</Grid>
@@ -62,7 +55,7 @@
 		font-family: var(--sa-font-family-body);
 		line-height: var(--sa-line-height-body);
 		font-size: var(--sa-font-size-subheading);
-		font-weight: 300;
+		font-weight: 200;
 
 		strong {
 			font-weight: 600;

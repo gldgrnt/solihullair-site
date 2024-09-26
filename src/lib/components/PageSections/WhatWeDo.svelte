@@ -21,14 +21,14 @@
 				justify="center"
 				direction={isDesktop ? 'row' : 'column'}
 			>
-				<ServiceCard href="/services/residential" src="./residential.png?w=400&h=300&format=webp">
+				<ServiceCard href="/services/residential" src="/residential.png?w=400&h=300&format=webp">
 					<h3 slot="title" class="h3">Residential</h3>
 					<p slot="description">
 						Nulla ac sagittis elit. Proin tempor, purus eget tincidunt aliquet, enim nisl pharetra
 						arcu.
 					</p>
 				</ServiceCard>
-				<ServiceCard href="/services/residential" src="./commercial.jpg?w=400&h=300&format=webp">
+				<ServiceCard href="/services/residential" src="/commercial.jpg?w=400&h=300&format=webp">
 					<h3 slot="title" class="h3">Commercial</h3>
 					<p slot="description">
 						Nulla ac sagittis elit. Proin tempor, purus eget tincidunt aliquet, enim nisl pharetra
