@@ -3,6 +3,7 @@
 	import type { Writable } from 'svelte/store';
 
 	export let justify = 'flex-start';
+	export let align = 'flex-start';
 
 	let isDesktop: boolean;
 
@@ -12,7 +13,10 @@
 	$: template = isDesktop ? 'repeat(12, 1fr)' : 'repeat(4, 1fr)';
 </script>
 
-<div class="grid" style="grid-template-columns: {template}; justify-content: {justify};">
+<div
+	class="grid"
+	style="grid-template-columns: {template}; justify-content: {justify}; align-items: {align};"
+>
 	<slot />
 </div>
 

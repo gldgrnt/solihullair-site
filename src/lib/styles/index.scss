@@ -7,7 +7,7 @@ body {
 }
 
 a {
-	color: var(--sa-colour-carbon);
+	color: currentColor;
 	text-decoration: none;
 
 	&:hover,

@@ -47,10 +47,11 @@
 					<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="SolihullAir Logo" /></a>
 				</GridItem>
 			{/if}
-			<GridItem span={isDesktop ? '7 / 13' : '4'} justify={isDesktop ? 'flex-end' : 'flex-start'}>
+			<GridItem span={isDesktop ? '7 / 13' : '4'}>
 				<Flex
 					gap={isDesktop ? 'clamp(16px, 5vw, 120px)' : '40px'}
 					direction={isDesktop ? 'row' : 'column'}
+					justify={isDesktop ? 'flex-end' : 'flex-start'}
 				>
 					<LinkSection direction="row">
 						<h3 slot="title" class="h5">Social</h3>
@@ -83,9 +84,11 @@
 		<Divider />
 		<Grid justify={isDesktop ? 'space-between' : 'flex-start'}>
 			<GridItem span="4"><span>Copyright © 2024 SolihullAir</span></GridItem>
-			<GridItem span={isDesktop ? '4 / 13' : '4'} justify={isDesktop ? 'flex-end' : 'flex-start'}
-				><span>Website by GG</span></GridItem
-			>
+			<GridItem span={isDesktop ? '4 / 13' : '4'}>
+				<Flex justify={isDesktop ? 'flex-end' : 'flex-start'}>
+					<span>Website by GG</span>
+				</Flex>
+			</GridItem>
 		</Grid>
 	</Container>
 </footer>

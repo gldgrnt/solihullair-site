@@ -23,5 +23,7 @@
 	.container {
 		padding-block: var(--padding-block);
 		padding-inline: var(--padding-inline);
+		max-width: 1280px;
+		margin: auto;
 	}
 </style>
