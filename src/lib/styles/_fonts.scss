@@ -1,13 +1,3 @@
-@font-face {
-	font-family: Archivo, Arial, Helvetica, sans-serif;
-	src: url('/archivo.ttf');
-}
-
-@font-face {
-	font-family: Lexend, Arial, Helvetica, sans-serif;
-	src: url('/lexend.ttf');
-}
-
 body,
 p,
 a,
@@ -31,7 +21,7 @@ h5,
 .h5 {
 	font-family: var(--sa-font-family-heading);
 	line-height: var(--sa-line-height-heading);
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .h2 {
