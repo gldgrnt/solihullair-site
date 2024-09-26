@@ -31,6 +31,10 @@
 							>Midlands, Worcestershire, Shropshire</strong
 						>.
 					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas incidunt modi fuga nisi
+						voluptates illum, at voluptatum laboriosam perspiciatis.
+					</p>
 					{#if showLink}
 						<Link href="/about">Read more</Link>
 					{/if}

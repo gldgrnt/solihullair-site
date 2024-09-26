@@ -16,7 +16,11 @@
 <div class="page-section-why-choose-us">
 	<Section background="platinum">
 		<Container>
-			<h2 class="h2">Why choose us</h2>
+			<Grid>
+				<GridItem span="12">
+					<h2 class="h2">Why choose us</h2>
+				</GridItem>
+			</Grid>
 			<Grid>
 				<GridItem span={isDesktop ? '6' : '4'}>
 					We are Refcom Certified company with F-Gas (REF1020074) id mauris sit amet odio dapibus

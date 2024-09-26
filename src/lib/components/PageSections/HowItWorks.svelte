@@ -17,9 +17,11 @@
 <Section background="platinum">
 	<div class="how-it-works">
 		<Container>
-			<Flex>
-				<h2 class="h2">How it works</h2>
-			</Flex>
+			<Grid>
+				<GridItem span="12">
+					<h2 class="h2">Why choose us</h2>
+				</GridItem>
+			</Grid>
 			<Grid>
 				<GridItem span={isDesktop ? '5' : '4'}>
 					<Flex direction="column" gap="var(--sa-spacing-md)">
