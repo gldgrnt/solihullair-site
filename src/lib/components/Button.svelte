@@ -127,14 +127,14 @@
 				}
 			}
 		}
-	}
 
-	:global(svg) {
-		height: var(--sa-spacing-md);
-		width: var(--sa-spacing-md);
-	}
+		:global(svg) {
+			height: var(--sa-spacing-md);
+			width: var(--sa-spacing-md);
+		}
 
-	:global(path) {
-		fill: currentColor;
+		:global(path) {
+			fill: currentColor;
+		}
 	}
 </style>

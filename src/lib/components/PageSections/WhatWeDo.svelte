@@ -16,7 +16,11 @@
 	<Section>
 		<Container>
 			<h2 class="h2">What we do</h2>
-			<Flex gap="clamp(40px, 5vw, 80px);" justify="center" direction={isDesktop ? 'row' : 'column'}>
+			<Flex
+				gap="clamp(40px, 5vw, 120px);"
+				justify="center"
+				direction={isDesktop ? 'row' : 'column'}
+			>
 				<ServiceCard href="/services/residential" src="./residential.png?w=400&h=300&format=webp">
 					<h3 slot="title" class="h3">Residential</h3>
 					<p slot="description">

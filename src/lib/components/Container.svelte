@@ -10,9 +10,8 @@
 	const innerWidth: Writable<number> = getContext('innerWidth');
 	innerWidth.subscribe((width) => (isDesktop = width > 767));
 
-	const mobilePadding = '40px';
-	$: pb = isDesktop ? paddingBlock : mobilePadding;
-	$: pi = isDesktop ? paddingInline : mobilePadding;
+	$: pb = isDesktop ? paddingBlock : '40px';
+	$: pi = isDesktop ? paddingInline : 'var(--sa-spacing-md)';
 </script>
 
 <div class="container" style="--padding-block: {pb}; --padding-inline: {pi};">

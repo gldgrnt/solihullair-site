@@ -1,5 +1,5 @@
 <script lang="ts">
-	type BackgroundColour = 'ember' | 'snow' | 'platinum' | 'cobalt';
+	type BackgroundColour = 'ember' | 'snow' | 'platinum' | 'cobalt' | 'transparent';
 	export let background: BackgroundColour = 'snow';
 
 	let textColour = ['ember', 'cobalt'].includes(background) ? 'snow' : 'carbon';
