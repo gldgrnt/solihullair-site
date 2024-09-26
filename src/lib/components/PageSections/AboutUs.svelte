@@ -61,9 +61,4 @@
 			font-weight: 600;
 		}
 	}
-
-	a {
-		font-weight: 900;
-		text-decoration: underline;
-	}
 </style>

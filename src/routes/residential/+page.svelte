@@ -4,10 +4,7 @@
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
 </script>
 
-<PageTitle
-	title="Residential"
-	description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet lectus velit. "
-/>
+<PageTitle title="Residential" />
 
 <PageIntro src="/commercial.jpg">
 	<p>

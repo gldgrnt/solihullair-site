@@ -18,12 +18,12 @@
 <Section>
 	<Container paddingBlock="80px">
 		<Grid align="center">
-			<GridItem span={isDesktop ? '6' : '4'}>
+			<GridItem span={isDesktop ? '5' : '4'}>
 				<Flex justify="center">
 					<div style="background-image: url('{src}');" />
 				</Flex>
 			</GridItem>
-			<GridItem span={isDesktop ? '5 / 13' : '4'}><slot /></GridItem>
+			<GridItem span={isDesktop ? '6 / 13' : '4'}><slot /></GridItem>
 		</Grid>
 	</Container>
 </Section>

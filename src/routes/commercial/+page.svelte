@@ -3,12 +3,10 @@
 	import HowItWorks from '$lib/components/PageSections/HowItWorks.svelte';
 	import PageIntro from '$lib/components/PageSections/PageIntro.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
+	import WhyChooseUs from '$lib/components/PageSections/WhyChooseUs.svelte';
 </script>
 
-<PageTitle
-	title="Commercial"
-	description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet lectus velit. "
-/>
+<PageTitle title="Commercial" />
 
 <PageIntro src="/commercial.jpg">
 	<p>
