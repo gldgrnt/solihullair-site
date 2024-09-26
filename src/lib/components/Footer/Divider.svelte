@@ -8,7 +8,7 @@
 		background-color: var(--sa-colour-platinum);
 
 		@media screen and (max-width: 767px) {
-			margin-block: 40px;
+			margin-block: 20px;
 		}
 	}
 </style>

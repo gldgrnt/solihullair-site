@@ -19,7 +19,7 @@
 		<Container>
 			<Grid>
 				<GridItem span="12">
-					<h2 class="h2">Why choose us</h2>
+					<h2 class="h2">We offer:</h2>
 				</GridItem>
 			</Grid>
 			<Grid>
@@ -44,6 +44,16 @@
 					</Flex>
 				</GridItem>
 				<GridItem span={isDesktop ? '5' : '4'}>
+					<Flex direction="column" gap="var(--sa-spacing-md)">
+						<Calendar />
+						<h3 class="h3">Suspendisse nec tortor urna.</h3>
+						<p>
+							Proin tempor, purus eget tincidunt aliquet, enim nisl pharetra arcu, sed porttitor
+							ligula tortor at ligula.
+						</p>
+					</Flex>
+				</GridItem>
+				<GridItem span={isDesktop ? '5 / 12' : '4'}>
 					<Flex direction="column" gap="var(--sa-spacing-md)">
 						<Calendar />
 						<h3 class="h3">Suspendisse nec tortor urna.</h3>

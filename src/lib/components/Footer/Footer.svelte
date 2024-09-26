@@ -80,10 +80,14 @@
 					</LinkSection>
 				</Flex>
 			</GridItem>
+			<GridItem span="12">
+				<Divider />
+			</GridItem>
 		</Grid>
-		<Divider />
 		<Grid justify={isDesktop ? 'space-between' : 'flex-start'}>
-			<GridItem span="4"><span>Copyright © 2024 SolihullAir</span></GridItem>
+			<GridItem span="4">
+				<span>Copyright © 2024 SolihullAir</span>
+			</GridItem>
 			<GridItem span={isDesktop ? '4 / 13' : '4'}>
 				<Flex justify={isDesktop ? 'flex-end' : 'flex-start'}>
 					<span>Website by GG</span>

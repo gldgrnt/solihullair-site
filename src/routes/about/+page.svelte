@@ -12,7 +12,7 @@
 
 <PageIntro src="/commercial.jpg">
 	<Flex gap="20px" direction="column">
-		<p>
+		<p style="font-size: 22px; font-weight: 600;">
 			Here at SolihullAir we cover all aspects of Air Conditioning and Refrigeration services
 			including installation, maintenance, and repair services for all HVAC systems.
 		</p>
