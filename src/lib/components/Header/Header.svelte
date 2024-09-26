@@ -49,8 +49,24 @@
 		currentRoute = to?.route.id || '';
 		showMobileNavigation = false;
 	});
+
+	// Remove overflow if swapping between
+	const handleResize = (e: UIEvent & { currentTarget: EventTarget & Window }) => {
+		const isDesktop = e.currentTarget.innerWidth > 767;
+		const body = document.querySelector('body');
+
+		if (isDesktop) {
+			showMobileNavigation = false;
+
+			if (body) {
+				body.style.height = '';
+				body.style.overflow = '';
+			}
+		}
+	};
 </script>
 
+<svelte:window on:resize={handleResize} />
 <header class:mobile-nav-open={showMobileNavigation}>
 	<div class="header">
 		<a href="/" class="header__logo"><img src="/logo.svg" alt="Solihull Air Logo" /></a>
