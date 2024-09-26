@@ -43,7 +43,7 @@
 	<Container paddingBlock="60px 30px">
 		<Grid justify="space-between">
 			<GridItem span={isDesktop ? '3' : '4'}>
-				<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="Solihull Air Logo" /></a>
+				<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="SolihullAir Logo" /></a>
 			</GridItem>
 			<GridItem span={isDesktop ? '7 / 13' : '4'} justify={isDesktop ? 'flex-end' : 'flex-start'}>
 				<Flex
