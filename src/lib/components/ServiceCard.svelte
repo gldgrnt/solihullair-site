@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Flex from './Flex.svelte';
+	import Link from './Link.svelte';
 
 	export let href = '';
 	export let src = '';
@@ -11,7 +12,7 @@
 			<div class="image-container" style="background-image: url('{src}');"></div>
 			<slot name="title" />
 			<slot name="description" />
-			<span>Read more</span>
+			<Link {href}>Read more</Link>
 		</Flex>
 	</article>
 </a>
@@ -39,10 +40,5 @@
 		background-position: center;
 		border-radius: var(--sa-spacing-sm);
 		transition: all var(--sa-transition-duration) var(--sa-transition-timing-function);
-	}
-
-	span {
-		font-weight: 900;
-		text-decoration: underline;
 	}
 </style>

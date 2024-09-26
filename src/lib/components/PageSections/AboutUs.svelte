@@ -6,6 +6,7 @@
 	import Grid from '../Grid/Grid.svelte';
 	import GridItem from '../Grid/GridItem.svelte';
 	import Section from '../Section.svelte';
+	import Link from '../Link.svelte';
 
 	let isDesktop: boolean;
 	let isSmallScreen: boolean;
@@ -36,10 +37,10 @@
 						<p>
 							Morbi id mauris sit amet odio dapibus sodales. Nulla ac sagittis elit. Proin tempor,
 							purus eget tincidunt aliquet, enim nisl pharetra arcu, sed porttitor ligula tortor at
-							ligula. Aenean rhoncus consequat egestas.
+							ligula.
 						</p>
 					{/if}
-					<a href="/about">Read more</a>
+					<Link href="/about">Read more</Link>
 				</Flex>
 			</GridItem>
 		</Grid>
