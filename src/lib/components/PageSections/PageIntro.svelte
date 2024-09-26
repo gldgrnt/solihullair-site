@@ -18,7 +18,7 @@
 <Section>
 	<Container paddingBlock="80px">
 		<Grid align="center">
-			<GridItem span={isDesktop ? '5' : '4'}>
+			<GridItem span={isDesktop ? '6' : '4'}>
 				<Flex justify="center">
 					<div style="background-image: url('{src}');" />
 				</Flex>

@@ -1,18 +1,50 @@
 <script lang="ts">
+	import Flex from '$lib/components/Flex.svelte';
+	import IconButton from '$lib/components/IconButton.svelte';
+	import Facebook from '$lib/components/Icons/Facebook.svelte';
+	import Instagram from '$lib/components/Icons/Instagram.svelte';
 	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 	import PageIntro from '$lib/components/PageSections/PageIntro.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
+
+	import { email, phone, social } from '$lib/data/meta';
 </script>
 
-<PageTitle title="Commercial" />
+<PageTitle title="Get in touch" />
 
 <PageIntro src="/commercial.jpg">
-	<p>
-		We're based in Solihull but we cover the Midlands, Worcestershire, Shropshire. Morbi id mauris
-		sit amet odio dapibus sodales. Nulla ac sagittis elit. Proin tempor, purus eget tincidunt
-		aliquet, enim nisl pharetra arcu, sed porttitor ligula tortor at ligula. Aenean rhoncus
-		consequat egestas. More about us
-	</p>
+	<Flex direction="column" gap="var(--sa-spacing-lg)">
+		<h2 class="h2">Contact details</h2>
+		<Flex direction="column" gap="var(--sa-spacing-xs)">
+			<h3 class="h5">Phone</h3>
+			<span>{phone.text}</span>
+		</Flex>
+		<Flex direction="column" gap="var(--sa-spacing-xs)">
+			<h3 class="h5">Email</h3>
+			<span>{email.text}</span>
+		</Flex>
+		<Flex direction="column" gap="var(--sa-spacing-sm)">
+			<h3 class="h5">Social media</h3>
+			<Flex gap="var(--sa-spacing-xs)" align="flex-end">
+				<IconButton as="a" variant="carbon" small href={social.facebook}>
+					<Facebook />
+				</IconButton>
+				<span>/solihullair</span>
+			</Flex>
+			<Flex gap="var(--sa-spacing-xs)" align="flex-end">
+				<IconButton as="a" variant="carbon" small href={social.instagram}>
+					<Instagram />
+				</IconButton>
+				<span>@solihullair</span>
+			</Flex>
+		</Flex>
+	</Flex>
 </PageIntro>
 
 <GetInTouch />
+
+<style lang="scss">
+	h3 {
+		font-size: var(--sa-font-size-body);
+	}
+</style>
