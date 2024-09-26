@@ -1,9 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import ClosePlugin from './close-plugin';
 
 export default defineConfig({
-	plugins: [sveltekit(), ClosePlugin()],
+	plugins: [sveltekit()],
 	css: {
 		preprocessorOptions: {
 			scss: {
