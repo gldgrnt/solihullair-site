@@ -1,6 +1,6 @@
 export const email = {
 	text: 'zeph@solihullair.co.uk',
-	link: 'mailto:zeph@solihullair.co.uk?subject=Enquiry'
+	link: 'mailto:zeph@solihullair.co.uk?subject=Quote'
 };
 
 export const phone = {

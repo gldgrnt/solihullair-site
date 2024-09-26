@@ -47,7 +47,7 @@
 		<Section background="ember">
 			<Container {...containerProps}>
 				<Flex {...flexProps}>
-					<h2 class="h2">Email us</h2>
+					<h2 class="h2">Get a quote</h2>
 					<p>
 						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
 					</p>
