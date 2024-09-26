@@ -15,7 +15,7 @@ span,
 div {
 	font-family: var(--sa-font-family-body);
 	font-size: var(--sa-font-size-body);
-	line-height: var(--sa-line-height);
+	line-height: var(--sa-line-height-body);
 }
 
 // Headings
@@ -30,12 +30,16 @@ h5,
 .h4,
 .h5 {
 	font-family: var(--sa-font-family-heading);
-	line-height: var(--sa-line-height);
+	line-height: var(--sa-line-height-heading);
+	font-weight: 500;
 }
 
 .h2 {
+	font-size: var(--sa-font-size-heading);
+}
+
+.h3 {
 	font-size: var(--sa-font-size-subheading);
-	font-weight: 500;
 }
 
 .h5 {

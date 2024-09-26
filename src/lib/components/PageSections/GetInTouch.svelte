@@ -11,7 +11,7 @@
 
 	import { phone, email } from '$lib/data/meta';
 
-	let isDesktop: boolean;
+	let isDesktop: boolean = false;
 
 	const innerWidth: Writable<number> = getContext('innerWidth');
 	innerWidth.subscribe((width) => (isDesktop = width > 767));
@@ -21,9 +21,9 @@
 		paddingInline: '0px'
 	};
 
-	const flexProps = {
+	$: flexProps = {
 		direction: 'column',
-		align: 'center',
+		align: isDesktop ? 'center' : 'flex-start',
 		gap: 'var(--sa-spacing-lg)'
 	};
 </script>
@@ -62,9 +62,17 @@
 <style lang="scss">
 	.page-section-get-in-touch {
 		text-align: center;
+
+		@media screen and (max-width: 767px) {
+			text-align: left;
+		}
 	}
 
 	p {
 		width: clamp(300px, 75%, 450px);
+
+		@media screen and (max-width: 767px) {
+			width: auto;
+		}
 	}
 </style>

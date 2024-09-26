@@ -42,9 +42,11 @@
 <footer>
 	<Container paddingBlock="60px 30px">
 		<Grid justify="space-between">
-			<GridItem span={isDesktop ? '3' : '4'}>
-				<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="SolihullAir Logo" /></a>
-			</GridItem>
+			{#if isDesktop}
+				<GridItem span={isDesktop ? '3' : '4'}>
+					<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="SolihullAir Logo" /></a>
+				</GridItem>
+			{/if}
 			<GridItem span={isDesktop ? '7 / 13' : '4'} justify={isDesktop ? 'flex-end' : 'flex-start'}>
 				<Flex
 					gap={isDesktop ? 'clamp(16px, 5vw, 120px)' : '40px'}
