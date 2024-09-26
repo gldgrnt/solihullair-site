@@ -1,13 +1,15 @@
 <script lang="ts">
 	type ElementType = 'a' | 'button' | 'span';
-	type Variant = 'cobalt' | 'ember' | 'whatsapp';
+	type Colour = 'cobalt' | 'ember' | 'whatsapp';
+	type Animation = 'fade' | 'switch';
 
 	export let as: ElementType = 'button';
 	export let href: string | undefined = undefined;
+	export let colour: Colour = 'cobalt';
 	export let inverse: boolean = false;
-	export let type: Variant = 'cobalt';
+	export let animation: Animation = 'switch';
 
-	const specificProps = (() => {
+	const elementProps = (() => {
 		if (as === 'a') {
 			return {
 				href
@@ -22,15 +24,18 @@
 
 		return {};
 	})();
-
-	const props = {
-		...specificProps,
-		class: `button ${type}`
-	};
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<svelte:element this={as} {...props} on:click {...$$props} class:inverse>
+<svelte:element
+	this={as}
+	{...elementProps}
+	on:click
+	{...$$props}
+	class:inverse
+	class="button {animation}"
+	style="--main-colour: var(--sa-colour-{colour})"
+>
 	<slot name="icon" />
 	<slot />
 </svelte:element>
@@ -50,81 +55,40 @@
 		transition: all 0.1s var(--sa-transition-timing-function);
 		text-decoration: none;
 		line-height: 1;
+		/* Color */
+		color: var(--sa-colour-snow);
+		background-color: var(--main-colour);
+		border-color: var(--main-colour);
 
 		&:hover,
 		&:focus {
 			text-decoration: none;
 		}
 
-		&.ember {
-			color: var(--sa-colour-snow);
-			background-color: var(--sa-colour-ember);
-			border-color: var(--sa-colour-ember);
-
+		&.switch {
 			&:hover,
 			&:focus {
-				color: var(--sa-colour-ember);
+				color: var(--main-colour);
 				background-color: var(--sa-colour-snow);
-			}
-
-			&.inverse {
-				color: var(--sa-colour-ember);
-				background-color: var(--sa-colour-snow);
-				border-color: var(--sa-colour-snow);
-
-				&:hover,
-				&:focus {
-					color: var(--sa-colour-snow);
-					background-color: var(--sa-colour-ember);
-				}
 			}
 		}
 
-		&.whatsapp {
-			color: var(--sa-colour-snow);
-			background-color: var(--sa-colour-whatsapp);
-			border-color: var(--sa-colour-whatsapp);
-
+		&.fade {
 			&:hover,
 			&:focus {
-				color: var(--sa-colour-whatsapp);
-				background-color: var(--sa-colour-snow);
-			}
-
-			&.inverse {
-				color: var(--sa-colour-whatsapp);
-				background-color: var(--sa-colour-snow);
-				border-color: var(--sa-colour-snow);
-
-				&:hover,
-				&:focus {
-					color: var(--sa-colour-snow);
-					background-color: var(--sa-colour-whatsapp);
-				}
+				filter: brightness(115%);
 			}
 		}
 
-		&.cobalt {
-			color: var(--sa-colour-snow);
-			background-color: var(--sa-colour-cobalt);
-			border-color: var(--sa-colour-cobalt);
+		&.inverse {
+			color: var(--main-colour);
+			background-color: var(--sa-colour-snow);
+			border-color: var(--sa-colour-snow);
 
 			&:hover,
 			&:focus {
-				color: var(--sa-colour-cobalt);
-				background-color: var(--sa-colour-snow);
-			}
-
-			&.inverse {
-				color: var(--sa-colour-cobalt);
-				background-color: var(--sa-colour-snow);
-				border-color: var(--sa-colour-snow);
-
-				&:hover,
-				&:focus {
-					color: var(--sa-colour-snow);
-					background-color: var(--sa-colour-cobalt);
-				}
+				color: var(--sa-colour-snow);
+				background-color: var(--main-colour);
 			}
 		}
 

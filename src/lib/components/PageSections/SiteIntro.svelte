@@ -32,7 +32,7 @@
 						<span>SolihullAir.</span>
 						Your local air conditioning and refrigeration specialist.
 					</h1>
-					<Button as="a" href="/contact">Get in touch</Button>
+					<Button as="a" href="/contact" animation="fade">Get in touch</Button>
 				</Flex>
 			</Container>
 		</Container>

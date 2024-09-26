@@ -15,7 +15,11 @@
 		{#each textLinks as { href, text }}
 			<li><NavLink {href} active={currentRoute === href}>{text}</NavLink></li>
 		{/each}
-		<li><Button as="a" type="ember" href={buttonLink.href}>{buttonLink.text}</Button></li>
+		<li>
+			<Button as="a" colour="ember" animation="fade" href={buttonLink.href}
+				>{buttonLink.text}</Button
+			>
+		</li>
 	</ul>
 </nav>
 

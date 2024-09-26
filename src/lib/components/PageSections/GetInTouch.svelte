@@ -37,7 +37,7 @@
 					<p>
 						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
 					</p>
-					<Button as="a" type="cobalt" inverse href={phone.link}>
+					<Button as="a" colour="cobalt" inverse href={phone.link}>
 						<Phone slot="icon" />
 						07123 456 789
 					</Button>
@@ -51,7 +51,8 @@
 					<p>
 						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
 					</p>
-					<Button as="a" type="ember" inverse href={email.link}><Mail slot="icon" />Email us</Button
+					<Button as="a" colour="ember" inverse href={email.link}
+						><Mail slot="icon" />Email us</Button
 					>
 				</Flex>
 			</Container>
