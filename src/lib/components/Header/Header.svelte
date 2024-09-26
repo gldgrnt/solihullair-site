@@ -26,6 +26,8 @@
 		}
 	];
 
+	// Mobile navigation show/hide
+	let showMobileNavigation = false;
 	const disableBodyScroll = () => {
 		const body = document.querySelector('body');
 
@@ -44,16 +46,15 @@
 		}
 	};
 
-	// Mobile navigation show/hide
-	let showMobileNavigation = false;
 	function handleBurgerMenuClick() {
 		showMobileNavigation = !showMobileNavigation;
-		const body = document.querySelector('body');
+		if (showMobileNavigation) disableBodyScroll();
+		else enableBodyScroll();
+	}
 
-		if (body) {
-			if (showMobileNavigation) disableBodyScroll();
-			else enableBodyScroll();
-		}
+	function handleCloseButtonClick() {
+		showMobileNavigation = false;
+		enableBodyScroll();
 	}
 
 	// Current site path
@@ -98,7 +99,7 @@
 	</div>
 	{#if showMobileNavigation}
 		<div class="header__mobile-navigation">
-			<MobileNav {currentRoute} {links} on:click={() => (showMobileNavigation = false)} />
+			<MobileNav {currentRoute} {links} on:click={handleCloseButtonClick} />
 		</div>
 	{/if}
 </header>
