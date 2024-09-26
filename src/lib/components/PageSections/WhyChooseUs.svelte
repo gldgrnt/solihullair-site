@@ -23,9 +23,17 @@
 			</Grid>
 			<Grid>
 				<GridItem span={isDesktop ? '6' : '4'}>
-					We are Refcom Certified company with F-Gas (REF1020074) id mauris sit amet odio dapibus
-					sodales. Nulla ac sagittis elit. Proin tempor, purus eget tincidunt aliquet, enim nisl
-					pharetra arcu, sed porttitor ligula tortor at ligula.
+					<Flex direction="column" gap="var(--sa-spacing-md)">
+						<p>
+							We are a Refcom Certified company with F-Gas (REF1020074) and we hold City & Guilds
+							qualifications.
+						</p>
+						<p>
+							F-Gas certification guarantees that we comply with regulations on handling
+							refrigerants. City & Guilds qualifications demonstrate our technical expertise and
+							commitment to high-quality workmanship.
+						</p>
+					</Flex>
 				</GridItem>
 				<GridItem span={isDesktop ? '5 / 13' : '4'}>
 					<Flex gap="var(--sa-spacing-xl)">

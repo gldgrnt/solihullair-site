@@ -19,7 +19,7 @@
 		<Container>
 			<Grid>
 				<GridItem span="12">
-					<h2 class="h2">We offer:</h2>
+					<h2 class="h2">We offer the following services:</h2>
 				</GridItem>
 			</Grid>
 			<Grid>

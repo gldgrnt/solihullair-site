@@ -53,6 +53,7 @@
 			transform: translate(-50%, -50%);
 			z-index: -2;
 			pointer-events: none;
+			background-color: var(--sa-colour-platinum);
 		}
 
 		&::after {

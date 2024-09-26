@@ -8,8 +8,8 @@
 
 <a {href}>
 	<article>
+		<div class="image-container" style="background-image: url('{src}');"></div>
 		<Flex direction="column" gap="var(--sa-spacing-md)" justify="space-between">
-			<div class="image-container" style="background-image: url('{src}');"></div>
 			<slot name="title" />
 			<slot name="description" />
 			<Link {href}>Read more</Link>
@@ -40,5 +40,6 @@
 		background-position: center;
 		border-radius: var(--sa-spacing-sm);
 		transition: all var(--sa-transition-duration) var(--sa-transition-timing-function);
+		margin-bottom: var(--sa-spacing-lg);
 	}
 </style>

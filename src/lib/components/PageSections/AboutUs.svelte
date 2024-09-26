@@ -27,13 +27,12 @@
 			<GridItem span={isDesktop ? '6 / 13' : '4'}>
 				<Flex direction="column" gap="var(--sa-spacing-lg)">
 					<p class="emphasis">
-						We're based in Solihull but we cover the <strong
-							>Midlands, Worcestershire, Shropshire</strong
-						>.
+						We're based in Solihull but we cover the Midlands, Worcestershire, Shropshire.
 					</p>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas incidunt modi fuga nisi
-						voluptates illum, at voluptatum laboriosam perspiciatis.
+						By covering a wide area, we ensure that homeowners and businesses across the Midlands
+						and surrounding counties benefit from our professional, prompt, and energy-efficient air
+						conditioning solutions.
 					</p>
 					{#if showLink}
 						<Link href="/about">Read more</Link>
