@@ -13,10 +13,30 @@
 	import Divider from './Divider.svelte';
 	import LinkSection from './LinkSection.svelte';
 
+	import { social, phone, email } from '$lib/data/meta';
+
 	let isDesktop: boolean;
 
 	const innerWidth: Writable<number> = getContext('innerWidth');
 	innerWidth.subscribe((width) => (isDesktop = width > 767));
+
+	const socialLinks = [
+		{
+			label: 'Whatsapp call',
+			Icon: Whatsapp,
+			href: social.whatsapp
+		},
+		{
+			label: 'instagram',
+			Icon: Instagram,
+			href: social.instagram
+		},
+		{
+			label: 'facebook',
+			Icon: Facebook,
+			href: social.facebook
+		}
+	];
 </script>
 
 <footer>
@@ -32,20 +52,23 @@
 				>
 					<LinkSection direction="row">
 						<h3 slot="title" class="h5">Social</h3>
-						<IconButton small variant="carbon" as="a" href="/" target="_blank">
-							<Whatsapp />
-						</IconButton>
-						<IconButton small variant="carbon" as="a" href="/" target="_blank">
-							<Instagram />
-						</IconButton>
-						<IconButton small variant="carbon" as="a" href="/" target="_blank">
-							<Facebook />
-						</IconButton>
+						{#each socialLinks as { label, href, Icon }}
+							<IconButton
+								small
+								variant="carbon"
+								as="a"
+								{href}
+								target="_blank"
+								aria-label="SolihullAir {label}"
+							>
+								<Icon />
+							</IconButton>
+						{/each}
 					</LinkSection>
 					<LinkSection>
 						<h3 slot="title" class="h5">Contact</h3>
-						<a href="tel:07123 456 789">07123 456 789</a>
-						<a href="mailto:zeph@solihullair.co.uk">zeph@solihullair.co.uk</a>
+						<a href={phone.link}>{phone.text}</a>
+						<a href={email.link}>{email.text}</a>
 					</LinkSection>
 					<LinkSection>
 						<h3 slot="title" class="h5">Services</h3>

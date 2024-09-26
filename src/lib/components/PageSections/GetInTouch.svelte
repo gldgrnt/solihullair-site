@@ -1,12 +1,15 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
+
 	import Button from '../Button.svelte';
 	import Container from '../Container.svelte';
 	import Flex from '../Flex.svelte';
 	import Section from '../Section.svelte';
 	import Phone from '../Icons/Phone.svelte';
 	import Mail from '../Icons/Mail.svelte';
+
+	import { phone, email } from '$lib/data/meta';
 
 	let isDesktop: boolean;
 
@@ -34,7 +37,7 @@
 					<p>
 						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
 					</p>
-					<Button as="a" type="cobalt" inverse href="#f">
+					<Button as="a" type="cobalt" inverse href={phone.link}>
 						<Phone slot="icon" />
 						07123 456 789
 					</Button>
@@ -48,7 +51,8 @@
 					<p>
 						Morbi id mauris sit amet odio dapibus sodales. Proin tempor, purus eget tincidunt nisl.
 					</p>
-					<Button as="a" type="ember" inverse href="#f"><Mail slot="icon" />Email us</Button>
+					<Button as="a" type="ember" inverse href={email.link}><Mail slot="icon" />Email us</Button
+					>
 				</Flex>
 			</Container>
 		</Section>
