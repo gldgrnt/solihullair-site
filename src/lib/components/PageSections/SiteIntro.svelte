@@ -66,6 +66,12 @@
 			z-index: -1;
 			opacity: 0.7;
 		}
+
+		:global(svg) {
+			width: 100%;
+			height: auto;
+			max-width: 670px;
+		}
 	}
 
 	h1 {
