@@ -76,7 +76,7 @@
 					<LinkSection>
 						<h3 slot="title" class="h5">Services</h3>
 						<a href="/residential">Residential</a>
-						<a href="/commerical">Commerical</a>
+						<a href="/commercial">Commerical</a>
 					</LinkSection>
 				</Flex>
 			</GridItem>
