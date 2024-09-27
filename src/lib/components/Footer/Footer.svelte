@@ -15,10 +15,11 @@
 
 	import { social, phone, email } from '$lib/data/meta';
 
-	let isDesktop: boolean;
+	let onDesktop = getContext('onDesktop');
+	console.log(onDesktop);
 
-	const innerWidth: Writable<number> = getContext('innerWidth');
-	innerWidth.subscribe((width) => (isDesktop = width > 767));
+	// const innerWidth: Writable<number> = getContext('innerWidth');
+	// innerWidth.subscribe((width) => (onDesktop = width > 767));
 
 	const socialLinks = [
 		{
@@ -42,16 +43,16 @@
 <footer>
 	<Container paddingBlock="60px 30px">
 		<Grid justify="space-between">
-			{#if isDesktop}
-				<GridItem span={isDesktop ? '3' : '4'}>
+			{#if onDesktop}
+				<GridItem span={onDesktop ? '3' : '4'}>
 					<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="SolihullAir Logo" /></a>
 				</GridItem>
 			{/if}
-			<GridItem span={isDesktop ? '7 / 13' : '4'}>
+			<GridItem span={onDesktop ? '7 / 13' : '4'}>
 				<Flex
-					gap={isDesktop ? 'clamp(16px, 5vw, 120px)' : '40px'}
-					direction={isDesktop ? 'row' : 'column'}
-					justify={isDesktop ? 'flex-end' : 'flex-start'}
+					gap={onDesktop ? 'clamp(16px, 5vw, 120px)' : '40px'}
+					direction={onDesktop ? 'row' : 'column'}
+					justify={onDesktop ? 'flex-end' : 'flex-start'}
 				>
 					<LinkSection direction="row">
 						<h3 slot="title" class="h5">Social</h3>
@@ -84,12 +85,12 @@
 				<Divider />
 			</GridItem>
 		</Grid>
-		<Grid justify={isDesktop ? 'space-between' : 'flex-start'}>
+		<Grid justify={onDesktop ? 'space-between' : 'flex-start'}>
 			<GridItem span="4">
 				<span>Copyright © 2024 SolihullAir</span>
 			</GridItem>
-			<GridItem span={isDesktop ? '4 / 13' : '4'}>
-				<Flex justify={isDesktop ? 'flex-end' : 'flex-start'}>
+			<GridItem span={onDesktop ? '4 / 13' : '4'}>
+				<Flex justify={onDesktop ? 'flex-end' : 'flex-start'}>
 					<span>Website by GG</span>
 				</Flex>
 			</GridItem>
