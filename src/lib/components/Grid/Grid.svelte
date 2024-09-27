@@ -24,7 +24,5 @@
 	.grid {
 		display: grid;
 		gap: var(--sa-spacing-md);
-		max-width: 1100px;
-		margin: auto;
 	}
 </style>

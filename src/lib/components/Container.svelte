@@ -15,16 +15,17 @@
 </script>
 
 <div
-	class="container"
 	style:padding-block={isDesktop ? paddingBlock : mobilePaddingBlock}
 	style:padding-inline={isDesktop ? paddingInline : mobilePaddingInline}
 >
-	<slot />
+	<div class="container">
+		<slot />
+	</div>
 </div>
 
 <style lang="scss">
 	.container {
-		max-width: 1280px;
+		max-width: 1100px;
 		margin: auto;
 	}
 </style>
