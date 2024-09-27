@@ -13,7 +13,7 @@
 
 <Section>
 	<Container>
-		Air Conditioning Offers an Incredibly Efficient and Cost-Effective way to both Cool and Heat
+		Air conditioning offers an incredibly efficient and cost-effective way to both cool and heat
 		your home.
 		<!-- <ImageCarousel /> -->
 	</Container>
