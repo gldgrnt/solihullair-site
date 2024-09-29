@@ -15,12 +15,14 @@
 	description="Expert residential air conditioning services including installation, repair, and maintenance. Keep your home cool and comfortable with energy-efficient solutions tailored to your needs."
 />
 
-<PageTitle title="Residential" />
+<PageTitle
+	title="Residential"
+	description="Air conditioning offers an incredibly efficient and cost-effective way to both cool and heat
+		your home."
+/>
 
 <Section>
 	<Container>
-		Air conditioning offers an incredibly efficient and cost-effective way to both cool and heat
-		your home.
 		<!-- <ImageCarousel /> -->
 	</Container>
 </Section>
