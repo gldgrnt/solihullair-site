@@ -2,7 +2,7 @@
 	export let as: 'a' | 'span' = 'a';
 </script>
 
-<svelte:element this={as} class="link" {...$$props}><slot /></svelte:element>
+<svelte:element this={as} class="link" {...$$restProps}><slot /></svelte:element>
 
 <style lang="scss">
 	.link {

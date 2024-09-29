@@ -3,12 +3,18 @@
 	import IconButton from '$lib/components/IconButton.svelte';
 	import Facebook from '$lib/components/Icons/Facebook.svelte';
 	import Instagram from '$lib/components/Icons/Instagram.svelte';
+	import PageMeta from '$lib/components/PageMeta.svelte';
 	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 	import PageIntro from '$lib/components/PageSections/PageIntro.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
 
 	import { email, phone, social } from '$lib/data/meta';
 </script>
+
+<PageMeta
+	title="Contact us"
+	description="Get in touch with our air conditioning experts today for all your residential or commercial HVAC needs."
+/>
 
 <PageTitle title="Get in touch" />
 

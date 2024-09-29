@@ -1,10 +1,16 @@
 <script lang="ts">
 	import Container from '$lib/components/Container.svelte';
+	import PageMeta from '$lib/components/PageMeta.svelte';
 	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
 	import Services from '$lib/components/PageSections/Services';
 	import { services } from './data';
 </script>
+
+<PageMeta
+	title="Commercial air conditioning services"
+	description="Professional commercial air conditioning services for businesses. From installations to routine maintenance, we ensure your commercial spaces stay cool and productive year-round."
+/>
 
 <PageTitle title="Commercial" />
 
