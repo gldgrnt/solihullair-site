@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Flex from '$lib/components/Flex.svelte';
 	import PageMeta from '$lib/components/PageMeta.svelte';
-	import AboutUs from '$lib/components/PageSections/AboutUs.svelte';
+	import AboutUs from '$lib/components/PageSections/AboutUs/AboutUs.svelte';
 	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 	import PageIntro from '$lib/components/PageSections/PageIntro.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';

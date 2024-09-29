@@ -1,51 +1,38 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import Button from '../Button.svelte';
-	import Container from '../Container.svelte';
-	import Flex from '../Flex.svelte';
-	import Logotype from '../Icons/Logotype.svelte';
-	import Phone from '../Icons/Phone.svelte';
-	import Section from '../Section.svelte';
+	import Button from '../../Button.svelte';
+	import Container from '../../Container.svelte';
+	import Flex from '../../Flex.svelte';
+	import Section from '../../Section.svelte';
 
-	const paddingBlock = '80px';
-
-	let video: HTMLVideoElement;
+	import { title, actions } from './content';
 </script>
 
 <div class="site-intro">
-	<video
-		autoplay
-		muted
-		loop
-		bind:this={video}
-		disablepictureinpicture
-		disableremoteplayback
-		playsinline
-	>
+	<video autoplay muted loop disablepictureinpicture disableremoteplayback playsinline>
 		<source src="/aircon.webm" type="video/webm" />
 		<source src="/aircon.mp4" type="video/mp4" />
 	</video>
 
 	<Section background="transparent">
-		<Container {paddingBlock}>
-			<Container {paddingBlock}>
+		<Container>
+			<Flex class="content-container" justify="center" align="center" direction="column">
 				<Flex direction="column" align="center" gap="var(--sa-spacing-lg)">
-					<div class="logo-container">
-						<Logotype />
-					</div>
-					<h1 class="h1">
-						<span>SolihullAir.</span>
-						Your local air conditioning and refrigeration specialist.
-					</h1>
+					<Flex direction="column" gap="var(--sa-spacing-md)">
+						<img alt="SolihullAir" src="/logotype.svg" />
+						<h1 class="h1">{title}</h1>
+					</Flex>
 					<Flex gap="var(--sa-spacing-md)">
-						<Button as="a" href="/contact" animation="fade">
-							<Phone slot="icon" />
-							Call us
-						</Button>
-						<Button as="a" href="/contact" animation="fade" colour="ember">Get in touch</Button>
+						{#each actions as { text, href, colour, Icon }}
+							<Button as="a" {href} animation="fade" {colour}>
+								{#if Icon}
+									<Icon slot="icon" />
+								{/if}
+								{text}
+							</Button>
+						{/each}
 					</Flex>
 				</Flex>
-			</Container>
+			</Flex>
 		</Container>
 	</Section>
 </div>
@@ -79,22 +66,21 @@
 			opacity: 0.7;
 		}
 
-		.logo-container {
-			width: 100%;
-			max-width: 670px;
+		:global(.content-container) {
+			min-height: 500px;
 
-			:global(svg) {
-				height: auto;
-				width: 100%;
+			@media screen and (max-width: 767px) {
+				min-height: 400px;
 			}
 		}
 	}
 
-	h1 {
-		& span {
-			display: none;
-		}
+	img {
+		width: 100%;
+		max-width: 670px;
+	}
 
+	h1 {
 		font-family: var(--sa-font-family-body);
 		font-weight: 300;
 		font-size: 28px;
