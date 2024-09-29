@@ -4,6 +4,7 @@
 
 	export let href = '';
 	export let src = '';
+	export let label = '';
 </script>
 
 <a {href}>
@@ -12,7 +13,7 @@
 		<Flex direction="column" gap="var(--sa-spacing-md)" justify="space-between">
 			<slot name="title" />
 			<slot name="description" />
-			<Link {href}>Read more</Link>
+			<Link {href} aria-label={label}>Read more</Link>
 		</Flex>
 	</article>
 </a>

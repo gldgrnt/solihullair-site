@@ -21,13 +21,21 @@
 				justify="center"
 				direction={isDesktop ? 'row' : 'column'}
 			>
-				<ServiceCard href="/residential" src="/residential.png?w=400&h=300&format=webp">
+				<ServiceCard
+					href="/residential"
+					src="/residential.png?w=400&h=300&format=webp"
+					label="Read more about our commercial air conditioning services"
+				>
 					<h3 slot="title" class="h3">Residential</h3>
 					<p slot="description">
 						Ensure year-round comfort with our efficient and energy-saving air conditioning systems.
 					</p>
 				</ServiceCard>
-				<ServiceCard href="/residential" src="/commercial.jpg?w=400&h=300&format=webp">
+				<ServiceCard
+					href="/residential"
+					src="/commercial.jpg?w=400&h=300&format=webp"
+					label="Read more about our commercial air conditioning services"
+				>
 					<h3 slot="title" class="h3">Commercial</h3>
 					<p slot="description">
 						Keep your business running smoothly with our reliable, energy-efficient air conditioning

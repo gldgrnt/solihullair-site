@@ -35,7 +35,7 @@
 						conditioning solutions.
 					</p>
 					{#if showLink}
-						<Link href="/about">Read more</Link>
+						<Link href="/about" aria-label="Read more about SolihullAir">Read more</Link>
 					{/if}
 				</Flex>
 			</GridItem>
