@@ -59,9 +59,5 @@
 		line-height: var(--sa-line-height-body);
 		font-size: var(--sa-font-size-subheading);
 		font-weight: 200;
-
-		strong {
-			font-weight: 600;
-		}
 	}
 </style>
