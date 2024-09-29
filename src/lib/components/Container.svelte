@@ -1,22 +1,18 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import type { Writable } from 'svelte/store';
+	import { getBreakpointContext } from '$lib/context/context';
 
 	export let paddingBlock = '60px';
 	export let paddingInline = '80px';
 
-	let isDesktop: boolean;
-
-	const innerWidth: Writable<number> = getContext('innerWidth');
-	innerWidth.subscribe((width) => (isDesktop = width > 767));
+	let onTablet = getBreakpointContext('tablet');
 
 	const mobilePaddingBlock = '40px';
 	const mobilePaddingInline = 'var(--sa-spacing-md)';
 </script>
 
 <div
-	style:padding-block={isDesktop ? paddingBlock : mobilePaddingBlock}
-	style:padding-inline={isDesktop ? paddingInline : mobilePaddingInline}
+	style:padding-block={$onTablet ? mobilePaddingBlock : paddingBlock}
+	style:padding-inline={$onTablet ? mobilePaddingInline : paddingInline}
 >
 	<div class="container">
 		<slot />

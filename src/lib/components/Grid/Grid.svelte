@@ -1,16 +1,14 @@
 <script lang="ts">
+	import { getBreakpointContext } from '$lib/context/context';
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
 
 	export let justify = 'flex-start';
 	export let align = 'flex-start';
 
-	let isDesktop: boolean;
+	let onTablet = getBreakpointContext('tablet');
 
-	const innerWidth: Writable<number> = getContext('innerWidth');
-	innerWidth.subscribe((width) => (isDesktop = width > 767));
-
-	$: template = isDesktop ? 'repeat(12, 1fr)' : 'repeat(4, 1fr)';
+	$: template = $onTablet ? 'repeat(4, 1fr)' : 'repeat(12, 1fr)';
 </script>
 
 <div

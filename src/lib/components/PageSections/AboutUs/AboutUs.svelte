@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import type { Writable } from 'svelte/store';
 	import Container from '../../Container.svelte';
 	import Flex from '../../Flex.svelte';
 	import Grid from '../../Grid/Grid.svelte';
@@ -8,29 +6,27 @@
 	import Section from '../../Section.svelte';
 	import Link from '../../Link.svelte';
 	import EmphasisedText from '$lib/components/EmphasisedText.svelte';
+	import { getBreakpointContext } from '$lib/context/context';
 
 	import { text, link } from './content';
 
 	export let showLink = true;
 
-	let isDesktop: boolean;
-
-	const innerWidth: Writable<number> = getContext('innerWidth');
-	innerWidth.subscribe((width) => (isDesktop = width > 767));
+	let onTablet = getBreakpointContext('tablet');
 </script>
 
 <Section background="cobalt">
 	<Container>
 		<Grid align="center">
-			<GridItem span={isDesktop ? '5' : '4'}>
-				<Flex justify={isDesktop ? 'flex-end' : 'flex-start'}>
+			<GridItem span={$onTablet ? '4' : '5'}>
+				<Flex justify={$onTablet ? 'flex-start' : 'flex-end'}>
 					<img
 						src="/map.svg"
 						alt="Map of areas covered by SolihullAir, including the Midlands, Worcestershire, Shropshire"
 					/>
 				</Flex>
 			</GridItem>
-			<GridItem span={isDesktop ? '6 / 13' : '4'}>
+			<GridItem span={$onTablet ? '4' : '6 / 13'}>
 				<Flex direction="column" gap="var(--sa-spacing-lg)">
 					<EmphasisedText>{text.emphasised}</EmphasisedText>
 					<p>{text.normal}</p>
@@ -48,8 +44,7 @@
 		width: 100%;
 		max-width: 500px;
 
-		@media screen and (max-width: 767px) {
-			max-width: none;
+		@media screen and (max-width: 799px) {
 			margin-bottom: 40px;
 		}
 	}
