@@ -7,6 +7,7 @@
 
 <div
 	style={`flex-direction: ${direction}; justify-content: ${justify}; align-items: ${align}; gap: ${gap};`}
+	{...$$restProps}
 >
 	<slot />
 </div>
