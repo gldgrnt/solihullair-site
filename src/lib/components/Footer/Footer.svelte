@@ -16,10 +16,9 @@
 	import { social, phone, email } from '$lib/data/meta';
 
 	let onDesktop = getContext('onDesktop');
-	console.log(onDesktop);
 
-	// const innerWidth: Writable<number> = getContext('innerWidth');
-	// innerWidth.subscribe((width) => (onDesktop = width > 767));
+	const innerWidth: Writable<number> = getContext('innerWidth');
+	innerWidth.subscribe((width) => (onDesktop = width > 767));
 
 	const socialLinks = [
 		{
