@@ -7,7 +7,7 @@ export const text = {
 };
 
 export const link = {
-	text: 'Read more',
+	text: 'More about us',
 	href: routes.about,
 	'aria-label': 'Read more about SolihullAir'
 };

@@ -17,7 +17,7 @@
 		<Flex direction="column" gap="var(--sa-spacing-md)" justify="space-between">
 			<h3 class="h3">{title}</h3>
 			<p>{description}</p>
-			<Link as="span">Read more</Link>
+			<Link as="span">{title} services</Link>
 		</Flex>
 	</article>
 </a>
