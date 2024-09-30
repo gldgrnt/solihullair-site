@@ -16,7 +16,7 @@
 
 <PageTitle title="About" />
 
-<PageIntro src="/commercial.jpg">
+<PageIntro src="/about-solihullair.jpg">
 	<Flex gap="20px" direction="column">
 		<p style="font-size: 22px; font-weight: 600;">
 			Here at SolihullAir we cover all aspects of Air Conditioning and Refrigeration services

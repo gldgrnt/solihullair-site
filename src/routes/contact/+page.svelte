@@ -18,7 +18,7 @@
 
 <PageTitle title="Get in touch" />
 
-<PageIntro src="/commercial.jpg">
+<PageIntro src="/services/photos/commercial-0.jpg">
 	<Flex direction="column" gap="var(--sa-spacing-lg)">
 		<h2 class="h2">Contact details</h2>
 		<Flex direction="column" gap="var(--sa-spacing-xs)">

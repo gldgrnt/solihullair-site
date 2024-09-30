@@ -21,7 +21,7 @@
 			<GridItem span={$onTablet ? '4' : '5'}>
 				<Flex justify={$onTablet ? 'flex-start' : 'flex-end'}>
 					<img
-						src="/map.svg"
+						src="/coverage-map.svg"
 						alt="Map of areas covered by SolihullAir, including the Midlands, Worcestershire, Shropshire"
 					/>
 				</Flex>

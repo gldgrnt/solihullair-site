@@ -79,7 +79,9 @@
 <svelte:window on:resize={handleResize} />
 <header class:mobile-nav-open={showMobileNavigation}>
 	<div class="header">
-		<a href="/" class="header__logo"><img src="/logo.svg" alt="Solihull Air Logo" /></a>
+		<a href="/" class="header__logo"
+			><img src="/logos/solihullair-logo.svg" alt="Solihull Air Logo" /></a
+		>
 		<div class="header__desktop">
 			<DesktopNav {currentRoute} {links} />
 		</div>

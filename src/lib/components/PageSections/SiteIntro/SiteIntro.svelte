@@ -9,8 +9,8 @@
 
 <div class="site-intro">
 	<video autoplay muted loop disablepictureinpicture disableremoteplayback playsinline>
-		<source src="/aircon.webm" type="video/webm" />
-		<source src="/aircon.mp4" type="video/mp4" />
+		<source src="/video/aircon.webm" type="video/webm" />
+		<source src="/video/aircon.mp4" type="video/mp4" />
 	</video>
 
 	<Section background="transparent">
@@ -18,7 +18,7 @@
 			<Flex class="content-container" justify="center" align="center" direction="column">
 				<Flex direction="column" align="center" gap="var(--sa-spacing-lg)">
 					<Flex direction="column" gap="var(--sa-spacing-md)">
-						<img alt="SolihullAir" src="/logotype.svg" />
+						<img alt="SolihullAir" src="/logos/solihullair-logotype.svg" />
 						<h1 class="h1">{title}</h1>
 					</Flex>
 					<Flex gap="var(--sa-spacing-md)">

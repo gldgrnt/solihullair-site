@@ -23,7 +23,7 @@
 			>
 				<ServiceCard
 					href="/residential"
-					src="/residential.png?w=400&h=300&format=webp"
+					src="/services/photos/residential-0.jpg"
 					label="Read more about our commercial air conditioning services"
 				>
 					<h3 slot="title" class="h3">Residential</h3>
@@ -32,8 +32,8 @@
 					</p>
 				</ServiceCard>
 				<ServiceCard
-					href="/residential"
-					src="/commercial.jpg?w=400&h=300&format=webp"
+					href="/commercial"
+					src="/services/photos/commercial-0.jpg"
 					label="Read more about our commercial air conditioning services"
 				>
 					<h3 slot="title" class="h3">Commercial</h3>

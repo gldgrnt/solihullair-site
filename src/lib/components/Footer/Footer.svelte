@@ -44,7 +44,13 @@
 		<Grid justify="space-between">
 			{#if onDesktop}
 				<GridItem span={onDesktop ? '3' : '4'}>
-					<a href="/"><img class="footer__logo" src="/logo-bw.svg" alt="SolihullAir Logo" /></a>
+					<a href="/"
+						><img
+							class="footer__logo"
+							src="/logos/solihullair-logo-bw.svg"
+							alt="SolihullAir Logo"
+						/></a
+					>
 				</GridItem>
 			{/if}
 			<GridItem span={onDesktop ? '7 / 13' : '4'}>
@@ -89,9 +95,11 @@
 				<span>Copyright © 2024 SolihullAir</span>
 			</GridItem>
 			<GridItem span={onDesktop ? '4 / 13' : '4'}>
-				<Flex justify={onDesktop ? 'flex-end' : 'flex-start'}>
-					<span>Website by GG</span>
-				</Flex>
+				<a href="https://github.com/gldgrnt" target="_blank">
+					<Flex justify={onDesktop ? 'flex-end' : 'flex-start'} gap="var(--sa-spacing-xs)">
+						<span>Website by </span><img src="/logos/gldgrnt.svg" alt="GldGrant logo" />
+					</Flex>
+				</a>
 			</GridItem>
 		</Grid>
 	</Container>
