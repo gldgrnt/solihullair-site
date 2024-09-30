@@ -8,12 +8,11 @@
 	import GridItem from '../Grid/GridItem.svelte';
 	import IconButton from '../IconButton.svelte';
 	import Facebook from '../Icons/Facebook.svelte';
-	import Instagram from '../Icons/Instagram.svelte';
-	import Whatsapp from '../Icons/Whatsapp.svelte';
 	import Divider from './Divider.svelte';
 	import LinkSection from './LinkSection.svelte';
 
 	import { social, phone, email } from '$lib/data/meta';
+	import { routes } from '$lib/data/routes';
 
 	let onDesktop = getContext('onDesktop');
 
@@ -22,21 +21,26 @@
 
 	const socialLinks = [
 		{
-			label: 'Whatsapp call',
-			Icon: Whatsapp,
-			href: social.whatsapp
-		},
-		{
-			label: 'instagram',
-			Icon: Instagram,
-			href: social.instagram
-		},
-		{
 			label: 'facebook',
 			Icon: Facebook,
 			href: social.facebook
 		}
 	];
+
+	const contactLinks = [phone, email];
+
+	const serviceLinks = [
+		{
+			text: 'Residential',
+			href: routes.residential
+		},
+		{
+			text: 'Commercial',
+			href: routes.commercial
+		}
+	];
+
+	const year = new Date().getFullYear();
 </script>
 
 <footer>
@@ -76,13 +80,15 @@
 					</LinkSection>
 					<LinkSection>
 						<h3 slot="title" class="h5">Contact</h3>
-						<a href={phone.link}>{phone.text}</a>
-						<a href={email.link}>{email.text}</a>
+						{#each contactLinks as { text, link }}
+							<a href={link}>{text}</a>
+						{/each}
 					</LinkSection>
 					<LinkSection>
 						<h3 slot="title" class="h5">Services</h3>
-						<a href="/residential">Residential</a>
-						<a href="/commercial">Commerical</a>
+						{#each serviceLinks as { text, href }}
+							<a {href}>{text}</a>
+						{/each}
 					</LinkSection>
 				</Flex>
 			</GridItem>
@@ -92,7 +98,7 @@
 		</Grid>
 		<Grid justify={onDesktop ? 'space-between' : 'flex-start'}>
 			<GridItem span="4">
-				<span>Copyright © 2024 SolihullAir</span>
+				<span>Copyright © {year} SolihullAir</span>
 			</GridItem>
 			<GridItem span={onDesktop ? '4 / 13' : '4'}>
 				<a href="https://github.com/gldgrnt" target="_blank">

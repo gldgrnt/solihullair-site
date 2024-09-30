@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
+	import { phone } from '$lib/data/meta';
+	import { routes } from '$lib/data/routes';
 	import IconButton from '../IconButton.svelte';
 	import Burger from '../Icons/Burger.svelte';
 	import Phone from '../Icons/Phone.svelte';
@@ -9,19 +11,19 @@
 	// Site links
 	const links = [
 		{
-			href: '/about',
+			href: routes.about,
 			text: 'About'
 		},
 		{
-			href: '/residential',
+			href: routes.residential,
 			text: 'Residential'
 		},
 		{
-			href: '/commercial',
+			href: routes.commercial,
 			text: 'Commercial'
 		},
 		{
-			href: '/contact',
+			href: routes.contact,
 			text: 'Contact'
 		}
 	];
@@ -79,14 +81,14 @@
 <svelte:window on:resize={handleResize} />
 <header class:mobile-nav-open={showMobileNavigation}>
 	<div class="header">
-		<a href="/" class="header__logo"
-			><img src="/logos/solihullair-logo.svg" alt="Solihull Air Logo" /></a
-		>
+		<a href="/" class="header__logo">
+			<img src="/logos/solihullair-logo.svg" alt="Solihull Air Logo" />
+		</a>
 		<div class="header__desktop">
 			<DesktopNav {currentRoute} {links} />
 		</div>
 		<div class="header__mobile">
-			<IconButton variant="cobalt" as="a" href="tel:+44000000000" aria-label="Call SolihullAir">
+			<IconButton variant="cobalt" as="a" href={phone.link} aria-label="Call SolihullAir">
 				<Phone />
 			</IconButton>
 			<IconButton
