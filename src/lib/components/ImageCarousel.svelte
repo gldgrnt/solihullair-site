@@ -55,44 +55,53 @@
 	});
 
 	let index = 0;
+	let splideId = '';
 
 	$: index = main?.splide.index || 0;
+	$: splideId = main?.splide.root.id;
 </script>
 
 <Section background="platinum">
 	<Container>
-		<Flex direction="column" gap="var(--sa-spacing-md)">
-			<h2 class="h3">Our work</h2>
-			<Grid>
-				<Grid.Item span={isDesktop ? '6' : '4'}>
-					<Flex justify="center">
-						<Splide
-							options={mainOptions}
-							bind:this={main}
-							aria-labelledby="thumbnails-example-heading"
-							on:active={(a) => (index = a.detail.Slide.index)}
-						>
-							{#each slides as slide}
-								<SplideSlide>
-									<img src={slide.src} alt="" />
-								</SplideSlide>
-							{/each}
-						</Splide>
-					</Flex>
-				</Grid.Item>
+		<Grid>
+			<Grid.Item span={isDesktop ? '6' : '4'}>
+				<Flex justify="center">
+					<Splide
+						options={mainOptions}
+						bind:this={main}
+						aria-labelledby="thumbnails-example-heading"
+						on:active={(a) => (index = a.detail.Slide.index)}
+					>
+						{#each slides as slide}
+							<SplideSlide>
+								<img src={slide.src} alt="" />
+							</SplideSlide>
+						{/each}
+					</Splide>
+				</Flex>
+			</Grid.Item>
 
-				{#if isDesktop}
-					<Grid.Item span="5 / 13">
-						<div class="image-grid">
-							{#each slides as slide, i}
-								<button on:click={() => main.splide.go(i)} class:active={index === i}>
-									<img src={slide.src} alt="" />
-								</button>
-							{/each}
-						</div>
-					</Grid.Item>
-				{:else}
-					<Grid.Item span="4">
+			{#if isDesktop}
+				<Grid.Item span="5 / 13">
+					<div class="image-grid">
+						{#each slides as slide, i}
+							{@const slideIndex = i + 1}
+							{@const zeroBasedIndex = slideIndex > 9 ? slideIndex : `0${slideIndex}`}
+							<button
+								on:click={() => main.splide.go(i)}
+								class:active={index === i}
+								aria-label="Go to slide {i + 1}"
+								aria-current={index === i}
+								aria-controls="{splideId}_slide{zeroBasedIndex}"
+							>
+								<img src={slide.src} alt="" />
+							</button>
+						{/each}
+					</div>
+				</Grid.Item>
+			{:else}
+				<Grid.Item span="4">
+					<div class="thumbnail-slider">
 						<Splide options={thumbsOptions} bind:this={thumbs}>
 							{#each slides as slide}
 								<SplideSlide>
@@ -100,10 +109,10 @@
 								</SplideSlide>
 							{/each}
 						</Splide>
-					</Grid.Item>
-				{/if}
-			</Grid>
-		</Flex>
+					</div>
+				</Grid.Item>
+			{/if}
+		</Grid>
 	</Container>
 </Section>
 
@@ -116,18 +125,30 @@
 		border-bottom-right-radius: 0;
 	}
 
+	.thumbnail-slider {
+		:global(.splide__slide) {
+			border: none;
+		}
+
+		:global(.splide__slide.is-active) {
+			border: 4px solid var(--sa-colour-ember);
+		}
+	}
+
 	.image-grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1rem;
 
 		button {
+			display: inline-flex;
 			border: none;
 			padding: 0;
 			margin: 0;
+			cursor: pointer;
 
 			&.active {
-				filter: contrast(100);
+				border: 4px solid var(--sa-colour-ember);
 			}
 		}
 
