@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { ServiceItem } from '$lib/data/types';
-	import CheckBadge from '$lib/components/Icons/CheckBadge.svelte';
 
 	export let title: ServiceItem['title'];
 	export let description: ServiceItem['description'];
+	export let icon: ServiceItem['icon'];
 </script>
 
 <div class="service-item">
-	<CheckBadge />
+	<img src="/services/icons/{icon}.svg" alt="" />
 	<h3 class="h3">{title}</h3>
 	<p>{description}</p>
 </div>
@@ -23,7 +23,7 @@
 		}
 	}
 
-	div :global(svg) {
+	img {
 		width: 40px;
 		height: 40px;
 	}

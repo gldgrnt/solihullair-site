@@ -1,9 +1,11 @@
 <script lang="ts">
+	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
 	import PageMeta from '$lib/components/PageMeta.svelte';
 	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
 	import Services from '$lib/components/PageSections/Services';
-	import { services } from './data';
+
+	import { services, photos } from './data';
 </script>
 
 <PageMeta
@@ -18,9 +20,11 @@
 />
 
 <Services title="SolihullAir offer a variety of commercial services, including:">
-	{#each services as { title, description }}
-		<Services.Item {title} {description} />
+	{#each services as service}
+		<Services.Item {...service} />
 	{/each}
 </Services>
+
+<ImageCarousel {photos} />
 
 <GetInTouch />

@@ -9,41 +9,19 @@
 	import Flex from './Flex.svelte';
 	import Grid from './Grid';
 	import type { Writable } from 'svelte/store';
+	import type { ServicePhoto } from '$lib/data/types';
 
 	let isDesktop: boolean;
 
 	const innerWidth: Writable<number> = getContext('innerWidth');
 	innerWidth.subscribe((width) => (isDesktop = width > 799));
 
-	const slides = [
-		{
-			src: '/residential.png'
-		},
-		{
-			src: '/commercial.jpg'
-		},
-		{
-			src: '/residential.png'
-		},
-		{
-			src: '/commercial.jpg'
-		},
-		{
-			src: '/residential.png'
-		},
-		{
-			src: '/commercial.jpg'
-		},
-		{
-			src: '/residential.png'
-		},
-		{
-			src: '/commercial.jpg'
-		},
-		{
-			src: '/residential.png'
-		}
-	];
+	export let photos: ServicePhoto[] = [];
+
+	const slides = photos.map(({ filename, alt }: ServicePhoto) => ({
+		src: `/services/photos/${filename}.jpg`,
+		alt
+	}));
 
 	let main: Splide;
 	let thumbs: SplideSlide;
