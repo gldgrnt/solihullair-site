@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let as: 'a' | 'button' = 'button';
+	export let as: 'a' | 'button' | 'span' = 'button';
 	export let variant: 'snow' | 'cobalt' | 'platinum' | 'ember' | 'carbon' = 'snow';
 	export let small = false;
 	export let active = false;
