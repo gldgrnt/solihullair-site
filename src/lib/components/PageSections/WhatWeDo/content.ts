@@ -8,7 +8,7 @@ export const serviceCards: ServiceCard[] = [
 			'Enjoy year-round comfort with our efficient, energy-saving air conditioning systems.',
 		filename: 'residential-0',
 		link: {
-			href: routes.rediential,
+			href: routes.residential,
 			'aria-label': 'Read more about our residential air conditioning services'
 		}
 	},
@@ -17,7 +17,7 @@ export const serviceCards: ServiceCard[] = [
 		description: 'Keep business running smoothly with air conditioning tailored to your needs.',
 		filename: 'commercial-0',
 		link: {
-			href: routes.rediential,
+			href: routes.residential,
 			'aria-label': 'Read more about our commercial air conditioning services'
 		}
 	}
