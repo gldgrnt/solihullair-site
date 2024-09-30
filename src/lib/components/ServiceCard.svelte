@@ -2,18 +2,22 @@
 	import Flex from './Flex.svelte';
 	import Link from './Link.svelte';
 
-	export let href = '';
-	export let src = '';
-	export let label = '';
+	export let link: { href: string; 'aria-label': string };
+	export let filename: string;
+	export let title;
+	export let description;
 </script>
 
-<a {href}>
+<a href={link.href} aria-label={link['aria-label']}>
 	<article>
-		<div class="image-container" style="background-image: url('{src}');"></div>
+		<div
+			class="image-container"
+			style="background-image: url('/services/photos/{filename}.jpg');"
+		></div>
 		<Flex direction="column" gap="var(--sa-spacing-md)" justify="space-between">
-			<slot name="title" />
-			<slot name="description" />
-			<Link {href} aria-label={label}>Read more</Link>
+			<h3 class="h3">{title}</h3>
+			<p>{description}</p>
+			<Link as="span">Read more</Link>
 		</Flex>
 	</article>
 </a>

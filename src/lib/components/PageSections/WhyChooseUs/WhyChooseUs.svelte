@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
-	import Container from '../Container.svelte';
-	import Flex from '../Flex.svelte';
-	import Grid from '../Grid/Grid.svelte';
-	import GridItem from '../Grid/GridItem.svelte';
-	import Section from '../Section.svelte';
+	import Container from '../../Container.svelte';
+	import Flex from '../../Flex.svelte';
+	import Grid from '../../Grid/Grid.svelte';
+	import GridItem from '../../Grid/GridItem.svelte';
+	import Section from '../../Section.svelte';
+
+	import { title, description, qualificationLogos } from './content';
 
 	let isDesktop: boolean;
 
@@ -18,27 +20,22 @@
 		<Container>
 			<Grid>
 				<GridItem span="12">
-					<h2 class="h2">Why choose us</h2>
+					<h2 class="h2">{title}</h2>
 				</GridItem>
 			</Grid>
 			<Grid>
 				<GridItem span={isDesktop ? '6' : '4'}>
 					<Flex direction="column" gap="var(--sa-spacing-md)">
-						<p>
-							We are a Refcom Certified company with F-Gas (REF1020074) and we hold City & Guilds
-							qualifications.
-						</p>
-						<p>
-							F-Gas certification guarantees that we comply with regulations on handling
-							refrigerants. City & Guilds qualifications demonstrate our technical expertise and
-							commitment to high-quality workmanship.
-						</p>
+						{#each description as paragraph}
+							<p>{paragraph}</p>
+						{/each}
 					</Flex>
 				</GridItem>
 				<GridItem span={isDesktop ? '5 / 13' : '4'}>
 					<Flex gap="var(--sa-spacing-xl)">
-						<img src="/logos/city-guilds-qualified.png" alt="City Guilds Qualification" />
-						<img src="/logos/refcom-gas.png" alt="Refcom F-Gas Certification" />
+						{#each qualificationLogos as { filename, alt }}
+							<img src="/logos/{filename}.png" {alt} />
+						{/each}
 					</Flex>
 				</GridItem>
 			</Grid>

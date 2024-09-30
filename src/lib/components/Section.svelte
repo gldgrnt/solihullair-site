@@ -1,6 +1,7 @@
 <script lang="ts">
-	type BackgroundColour = 'ember' | 'snow' | 'platinum' | 'cobalt' | 'transparent';
-	export let background: BackgroundColour = 'snow';
+	import type { SectionBackground } from '$lib/data/types';
+
+	export let background: SectionBackground = 'snow';
 
 	let textColour = ['ember', 'cobalt'].includes(background) ? 'snow' : 'carbon';
 </script>

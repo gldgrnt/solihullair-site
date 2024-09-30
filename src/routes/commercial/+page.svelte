@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
 	import PageMeta from '$lib/components/PageMeta.svelte';
-	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
 	import Services from '$lib/components/PageSections/Services';
 
@@ -26,5 +25,3 @@
 </Services>
 
 <ImageCarousel {photos} />
-
-<GetInTouch />
