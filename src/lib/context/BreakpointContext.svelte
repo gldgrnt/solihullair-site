@@ -1,7 +1,13 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { desktopStore, mobileStore, setBreakpointContext, tabletStore } from './context';
+	import {
+		desktopStore,
+		mobileStore,
+		monitorStore,
+		setBreakpointContext,
+		tabletStore
+	} from './context';
 
 	$: innerWidth = 0;
 
@@ -14,7 +20,7 @@
 	setContext('mobile', mobileStore);
 	setContext('tablet', tabletStore);
 	setContext('desktop', desktopStore);
-	setContext('monitor', mobileStore);
+	setContext('monitor', monitorStore);
 
 	$: setBreakpointContext(innerWidth);
 </script>

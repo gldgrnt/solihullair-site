@@ -17,6 +17,11 @@
 	--sa-spacing-md: var(--sa-spacing-base);
 	--sa-spacing-lg: calc(var(--sa-spacing-base) * 1.5);
 	--sa-spacing-xl: calc(var(--sa-spacing-base) * 2);
+
+	--sa-spacing-page-sm: 20px;
+	--sa-spacing-page-md: 40px;
+	--sa-spacing-page-lg: 60px;
+	--sa-spacing-page-xl: 80px;
 	/* Typography */
 	--sa-font-family-heading: Lexend, Arial, Helvetica, sans-serif;
 	--sa-font-family-body: Archivo, Arial, Helvetica, sans-serif;

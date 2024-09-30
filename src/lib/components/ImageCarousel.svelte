@@ -83,7 +83,7 @@
 
 <Section background="platinum">
 	<Container>
-		<Flex direction="column" gap="40px">
+		<Flex direction="column" gap="var(--sa-spacing-md)">
 			<h2 class="h3">Our work</h2>
 			<Grid>
 				<Grid.Item span={isDesktop ? '6' : '4'}>
@@ -136,10 +136,6 @@
 		aspect-ratio: 1;
 		border-radius: 40px;
 		border-bottom-right-radius: 0;
-
-		@media screen and (max-width: 767px) {
-			border-radius: 0;
-		}
 	}
 
 	.image-grid {
