@@ -61,5 +61,17 @@ export const photos: ServicePhoto[] = [
 	{
 		filename: 'residential-5',
 		alt: ''
+	},
+	{
+		filename: 'residential-6',
+		alt: ''
+	},
+	{
+		filename: 'residential-7',
+		alt: ''
+	},
+	{
+		filename: 'residential-8',
+		alt: ''
 	}
 ];
