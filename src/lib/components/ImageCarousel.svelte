@@ -2,36 +2,164 @@
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 	import type { Options } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css';
+
 	import Container from './Container.svelte';
 	import Section from './Section.svelte';
+	import { getContext, onMount } from 'svelte';
+	import Flex from './Flex.svelte';
+	import Grid from './Grid';
+	import type { Writable } from 'svelte/store';
+
+	let isDesktop: boolean;
+
+	const innerWidth: Writable<number> = getContext('innerWidth');
+	innerWidth.subscribe((width) => (isDesktop = width > 799));
+
+	const slides = [
+		{
+			src: '/residential.png'
+		},
+		{
+			src: '/commercial.jpg'
+		},
+		{
+			src: '/residential.png'
+		},
+		{
+			src: '/commercial.jpg'
+		},
+		{
+			src: '/residential.png'
+		},
+		{
+			src: '/commercial.jpg'
+		},
+		{
+			src: '/residential.png'
+		},
+		{
+			src: '/commercial.jpg'
+		},
+		{
+			src: '/residential.png'
+		}
+	];
+
+	let main: Splide;
+	let thumbs: SplideSlide;
 
 	const mainOptions: Options = {
-		rewind: true
+		type: 'fade',
+		perMove: 1,
+		gap: '1rem',
+		pagination: false,
+		arrows: false
 	};
 
-	const secondaryOptions: Options = {
-		isNavigation: false,
-		perPage: 2
+	const thumbsOptions: Options = {
+		type: 'slide',
+		rewind: true,
+		gap: '1rem',
+		pagination: false,
+		fixedWidth: 75,
+		fixedHeight: 75,
+		cover: true,
+		isNavigation: true,
+		updateOnMove: true,
+		arrows: false,
+		focus: 'center'
 	};
+
+	onMount(() => {
+		if (main && thumbs) {
+			main.sync(thumbs.splide);
+		}
+	});
+
+	let index = 0;
+
+	$: index = main?.splide.index || 0;
 </script>
 
-<Splide aria-label="My Favorite Images" {mainOptions}>
-	<SplideSlide>
-		<img src="/residential.png" height="400" alt="Imasge 1" />
-	</SplideSlide>
-	<SplideSlide>
-		<img src="/commercial.jpg" height="400" alt="Imagfe 2" />
-	</SplideSlide>
-</Splide>
+<Section background="platinum">
+	<Container>
+		<Flex direction="column" gap="40px">
+			<h2 class="h3">Our work</h2>
+			<Grid>
+				<Grid.Item span={isDesktop ? '6' : '4'}>
+					<Flex justify="center">
+						<Splide
+							options={mainOptions}
+							bind:this={main}
+							aria-labelledby="thumbnails-example-heading"
+							on:active={(a) => (index = a.detail.Slide.index)}
+						>
+							{#each slides as slide}
+								<SplideSlide>
+									<img src={slide.src} alt="" />
+								</SplideSlide>
+							{/each}
+						</Splide>
+					</Flex>
+				</Grid.Item>
 
-<Splide aria-label="My Favorite Images" {secondaryOptions}>
-	<SplideSlide>
-		<img src="/residential.png" height="400" alt="Imasge 1" />
-	</SplideSlide>
-	<SplideSlide>
-		<img src="/commercial.jpg" height="400" alt="Imagfe 2" />
-	</SplideSlide>
-</Splide>
+				{#if isDesktop}
+					<Grid.Item span="5 / 13">
+						<div class="image-grid">
+							{#each slides as slide, i}
+								<button on:click={() => main.splide.go(i)} class:active={index === i}>
+									<img src={slide.src} alt="" />
+								</button>
+							{/each}
+						</div>
+					</Grid.Item>
+				{:else}
+					<Grid.Item span="4">
+						<Splide options={thumbsOptions} bind:this={thumbs}>
+							{#each slides as slide}
+								<SplideSlide>
+									<img src={slide.src} alt="" />
+								</SplideSlide>
+							{/each}
+						</Splide>
+					</Grid.Item>
+				{/if}
+			</Grid>
+		</Flex>
+	</Container>
+</Section>
 
 <style lang="scss">
+	:global(.splide__slide img) {
+		width: 100%;
+		object-fit: cover;
+		aspect-ratio: 1;
+		border-radius: 40px;
+		border-bottom-right-radius: 0;
+
+		@media screen and (max-width: 767px) {
+			border-radius: 0;
+		}
+	}
+
+	.image-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem;
+
+		button {
+			border: none;
+			padding: 0;
+			margin: 0;
+
+			&.active {
+				filter: contrast(100);
+			}
+		}
+
+		img {
+			width: 100%;
+			aspect-ratio: 1;
+		}
+	}
 </style>

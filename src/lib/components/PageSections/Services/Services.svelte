@@ -12,7 +12,7 @@
 	innerWidth.subscribe((width) => (isDesktop = width > 767));
 </script>
 
-<Section background="platinum">
+<Section>
 	<Container>
 		<h2 class="h3">{title}</h2>
 		<div class="service-list">

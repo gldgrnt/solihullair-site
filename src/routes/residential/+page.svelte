@@ -4,7 +4,7 @@
 	import GetInTouch from '$lib/components/PageSections/GetInTouch.svelte';
 	import PageTitle from '$lib/components/PageSections/PageTitle.svelte';
 	import Services from '$lib/components/PageSections/Services';
-	// import ImageCarousel from '$lib/components/ImageCarousel.svelte';
+	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
 	import PageMeta from '$lib/components/PageMeta.svelte';
 
 	import { services } from './data';
@@ -26,5 +26,7 @@
 		<Services.Item {title} {description} />
 	{/each}
 </Services>
+
+<ImageCarousel />
 
 <GetInTouch />
