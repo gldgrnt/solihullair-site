@@ -4,21 +4,14 @@
 	import ImageCarousel from '$lib/components/ImageCarousel.svelte';
 	import PageMeta from '$lib/components/PageMeta.svelte';
 
-	import { services, photos } from './data';
+	import { meta, pageTitle, servicesTitle, services, photos } from './residential.content';
 </script>
 
-<PageMeta
-	title="Residential air conditioning services"
-	description="Expert residential air conditioning services including installation, repair, and maintenance. Keep your home cool and comfortable with energy-efficient solutions tailored to your needs."
-/>
+<PageMeta title={meta.title} description={meta.description} />
 
-<PageTitle
-	title="Residential"
-	description="Air conditioning offers an incredibly efficient and cost-effective way to both cool and heat
-		your home."
-/>
+<PageTitle title={pageTitle.title} description={pageTitle.description} />
 
-<Services title="For residential properties, SolihullAir can offer the following services:">
+<Services title={servicesTitle}>
 	{#each services as service}
 		<Services.Item {...service} />
 	{/each}

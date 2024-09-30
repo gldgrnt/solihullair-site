@@ -28,7 +28,7 @@
 			</GridItem>
 			<GridItem span={$onTablet ? '4' : '6 / 13'}>
 				<Flex direction="column" gap="var(--sa-spacing-lg)">
-					<EmphasisedText>{text.emphasised}</EmphasisedText>
+					<EmphasisedText type="thin">{text.emphasised}</EmphasisedText>
 					<p>{text.normal}</p>
 					{#if showLink}
 						<Link href={link.href} aria-label={link['aria-label']}>{link.text}</Link>
